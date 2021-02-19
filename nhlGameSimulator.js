@@ -946,7 +946,7 @@ function init (){
 }
 
 function aboutMusic(){
-	alert("Click on the Play Music button to listen to my custom music playlist for a truly unique experience. Or you could still use this app without listening to the music. It&#39;s your call!");
+	alert("Click on the Play Music button to listen to my custom music playlist for a truly unique experience. Or you could still use this app without listening to the music. It's your call!");
 }
 
 function playMusic(){
