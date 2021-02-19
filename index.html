@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<script type="text/javascript" src="nhlGameSimulator.js"></script>
+		<link rel="stylesheet" type="text/css" href="nhlGameSimulator.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>NHL Game Simulator</title>
+	</head>
+	<body>
+		<div id="music">
+			<p style="margin-right: 125px"><b>MUSIC</b> &nbsp;&nbsp; <button type="button" id="aboutMusic" onclick="aboutMusic()">About</button></p>
+			<p id="trackDescription" style="visibility: hidden"></p>
+			<p id="volumeMeter" style="visibility: hidden"></p>
+			<button type="button" id="playMusic" onclick="playMusic()">Play Music</button>
+			<button type="button" id="showSongInfo" onclick="showSongInfo()">Show Song Info</button>
+			<button type="button" id="hideSongInfo" onclick="hideSongInfo()">Hide Song Info</button>
+			<button type="button" id="shuffleMusic" onclick="shuffleMusic()">Change Song</button>
+			<button type="button" id="downVol" onclick="downVol()">Lower Volume</button>
+			<button type="button" id="upVol" onclick="upVol()">Higher Volume</button>
+		</div>
+		
+		<h1>NHL Game Simulator <h2><a href="about-me.html">by Victor Ruggi</a></h2></h1>
+		<p id="about">This simulator does not take into account current NHL standings or lines. In the end, the final score is what really matters. Skaters are the only entities that can score goals or record assists, since "goalie goals" are very rare, as are goalies getting assists, although the latter is slightly more common.<br/> "Other (insert team here)" when it comes to goals and assists means any player who joins the team roster later on in the season from either the juniors or the Draft.<br/>
+		<a href="rosters.html"><span style="color: white">Click here to view all the team rosters. If you are unfamiliar with the NHL, you will need to know the names of each player in the NHL and how they are spelled, as it will come in handy later.</span></a><br/>
+		Once the simulation is done, you can view a box score of the result at the very bottom of the page.</p>
+		<div id="reset">
+			<input type="button" id="reset-btn" value="Reset" disabled="true" />
+		</div>
+		
+		<div id="injury-report" style="visibility: hidden">
+			<p>Indicate which players will not be playing in this game. Left side is the away team, right side is the home team. Please put one player per line. Apostrophes: &amp;#39;</p>
+			<textarea id="team1" name="team1"></textarea>
+			<textarea id="team2" name="team2"></textarea>
+			<input id="injury-submit" type="button" value="Submit" />
+		</div>
+		
+		<p id="header-text">Select Team 1 (Away)</p>
+		<p id="simulation"></p>
+		
+		<div id="row1">
+		<ul>
+			<li><img src="logos/ducks.png"><input type="button" id="ducks" value="Anaheim Ducks" /></img></li>
+			<li><img src="logos/coyotes.png"><input type="button" id="coyotes" value="Arizona Coyotes" /></img></li>
+			<li><img src="logos/bruins.png"><input type="button" id="bruins" value="Boston Bruins" /></img></li>
+			<li><img src="logos/sabres.png"><input type="button" id="sabres" value="Buffalo Sabres" /></img></li>
+			<li><img src="logos/flames.png"><input type="button" id="flames" value="Calgary Flames" /></img></li>
+			<li><img src="logos/hurricanes.png"><input type="button" id="hurricanes" value="Carolina Hurricanes" /></img></li>
+			<li><img src="logos/blackhawks.png"><input type="button" id="blackhawks" value="Chicago Blackhawks" /></img></li>
+		</ul>
+		</div>
+		
+		<div id="row2">
+		<ul>
+			<li><img src="logos/avalanche.png"><input type="button" id="avalanche" value="Colorado Avalanche" /></img></li>
+			<li><img src="logos/bluejackets.png"><input type="button" id="bluejackets" value="Columbus Blue Jackets" /></img></li>
+			<li><img src="logos/stars.png"><input type="button" id="stars" value="Dallas Stars" /></img></li>
+			<li><img src="logos/redwings.png"><input type="button" id="redwings" value="Detroit Red Wings" /></img></li>
+			<li><img src="logos/oilers.png"><input type="button" id="oilers" value="Edmonton Oilers" /></img></li>
+			<li><img src="logos/panthers.png"><input type="button" id="panthers" value="Florida Panthers" /></img></li>
+			<li><img src="logos/kings.png"><input type="button" id="kings" value="Los Angeles Kings" /></img></li>
+		</ul>
+		</div>
+		
+		<div id="row3">
+		<ul>
+			<li><img src="logos/wild.png"><input type="button" id="wild" value="Minnesota Wild" /></img></li>
+			<li><img src="logos/canadiens.png"><input type="button" id="canadiens" value="Montreal Canadiens" /></img></li>
+			<li><img src="logos/predators.png"><input type="button" id="predators" value="Nashville Predators" /></img></li>
+			<li><img src="logos/devils.png"><input type="button" id="devils" value="New Jersey Devils" /></img></li>
+			<li><img src="logos/islanders.png"><input type="button" id="islanders" value="New York Islanders" /></img></li>
+			<li><img src="logos/rangers.png"><input type="button" id="rangers" value="New York Rangers" /></img></li>
+			<li><img src="logos/senators.png"><input type="button" id="senators" value="Ottawa Senators" /></img></li>
+		</ul>
+		</div>
+		
+		<div id="row4">
+		<ul>
+			<li><img src="logos/flyers.png"><input type="button" id="flyers" value="Philadelphia Flyers" /></img></li>
+			<li><img src="logos/penguins.png"><input type="button" id="penguins" value="Pittsburgh Penguins" /></img></li>
+			<li><img src="logos/sharks.png"><input type="button" id="sharks" value="San Jose Sharks" /></img></li>
+			<li><img src="logos/blues.png"><input type="button" id="blues" value="St. Louis Blues" /></img></li>
+			<li><img src="logos/lightning.png"><input type="button" id="lightning" value="Tampa Bay Lightning" /></img></li>
+			<li><img src="logos/mapleleafs.png"><input type="button" id="mapleleafs" value="Toronto Maple Leafs" /></img></li>
+			<li><img src="logos/canucks.png"><input type="button" id="canucks" value="Vancouver Canucks" /></img></li>
+		</ul>
+		</div>
+		
+		<div id="row5">
+		<ul>
+			<li><img src="logos/goldenknights.png"><input type="button" id="goldenknights" value="Vegas Golden Knights" /></img></li>
+			<li><img src="logos/capitals.png"><input type="button" id="capitals" value="Washington Capitals" /></img></li>
+			<li><img src="logos/jets.png"><input type="button" id="jets" value="Winnipeg Jets" /></img></li>
+		</ul>
+		</div>
+		
+		<div id="box-score" style="visibility: hidden">
+		</div>
+		
+		<div id="credits">
+			<p>All logos used on this site come from FreebieSupply.com, who provide free design resources for web developers everywhere.</p>
+			<!--<p>All NHL logos and marks and NHL team logos and marks as well as all other proprietary materials depicted herein are the property of the NHL and the respective NHL teams and may not be reproduced without the prior written consent of NHL Enterprises, L.P. © NHL 2020. All Rights Reserved.</p>-->
+		</div>
+	</body>
+</html>
