@@ -923,7 +923,7 @@ function init (){
 	
 	/*INITIALIZE THE PLAYLIST*/
 	musicPlaylist = [ {song: "Strawberry Lipstick", artist: "Yungblud", src: "playlist/track01.mp3", songLength: 165.093878},
-					  {song: "HOKO", artist: "Hellogoodbye", src: "playlist/track02.mp3", songLength: 215.745306},
+					  {song: "Hellogoodbye", artist: "HOKO", src: "playlist/track02.mp3", songLength: 215.745306},
 					  {song: "According to You", artist: "Orianthi", src: "playlist/track03.mp3", songLength: 198.138776},
 					  {song: "Party Hard", artist: "Andrew W.K.", src: "playlist/track04.mp3", songLength: 184.973061},
 					  {song: "Crowd Chant", artist: "Joe Satriani", src: "playlist/track05.mp3", songLength: 195.056327},
