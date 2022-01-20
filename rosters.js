@@ -1,864 +1,848 @@
 function init(){
-	ducks = [ {name: "Andrew Agozzino", goals: 0, assists: 0,  state: "active"},  
-	{name: "David Backes", goals: 0, assists: 0,  state: "active"},  
-	{name: "Michael Del Zotto", goals: 0, assists: 0,  state: "active"},  
-	{name: "Nicolas Deslauriers", goals: 0, assists: 0,  state: "active"},  
-	{name: "Christian Djoos", goals: 0, assists: 0,  state: "active"},  
-	{name: "Patrick Eaves", goals: 0, assists: 0,  state: "active"},  
-	{name: "Cam Fowler", goals: 0, assists: 0,  state: "active"},  
-	{name: "Ryan Getzlaf", goals: 0, assists: 0,  state: "active"},  
-	{name: "Erik Gudbranson", goals: 0, assists: 0,  state: "active"}, 
-	{name: "Danton Heinen", goals: 0, assists: 0,  state: "active"},  
-	{name: "Adam Henrique", goals: 0, assists: 0,  state: "active"},  
-	{name: "Matt Irwin", goals: 0, assists: 0,  state: "active"},  
-	{name: "Max Jones", goals: 0, assists: 0,  state: "active"},  
-	{name: "Ryan Kesler", goals: 0, assists: 0,  state: "active"},  
-	{name: "Jacob Larsson", goals: 0, assists: 0,  state: "active"},  
-	{name: "Hampus Lindholm", goals: 0, assists: 0,  state: "active"},  
-	{name: "Josh Manson", goals: 0, assists: 0,  state: "active"},  
-	{name: "Sonny Milano", goals: 0, assists: 0,  state: "active"},  
-	{name: "Rickard Rakell", goals: 0, assists: 0,  state: "active"}, 
-	{name: "Carter Rowney", goals: 0, assists: 0,  state: "active"},  
-	{name: "Jakob Silfverberg", goals: 0, assists: 0,  state: "active"},  
-	{name: "Sam Steel", goals: 0, assists: 0,  state: "active"} ];	
+	ducks = [ {name: "Buddy Robinson", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Jakob Silfverberg", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Troy Terry", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Max Comtois", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Nicolas Deslauriers", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Max Jones", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Sonny Milano", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Rickard Rakell", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Sam Carrick", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Ryan Getzlaf", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Derek Grant", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Benoit-Olivier Groulx", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Adam Henrique", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Vinni Lettieri", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Isac Lundestrom", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Sam Steel", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Trevor Zegras", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Simon Benoit", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jamie Drysdale", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Cam Fowler", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Brendan Guhle", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jacob Larsson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Hampus Lindholm", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Josh Mahura", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Josh Manson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Greg Pateryn", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Kevin Shattenkirk", goals: 0, assists: 0,  state: "active", line: "D"}];	
 	
-	coyotes = [ {name: "Kyle Capobianco", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Jakob Chychrun", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Jason Demers", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Oliver Ekman-Larsson", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Alex Goligoski", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Jordan Gross", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Niklas Hjalmarsson", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Ilya Lyubushkin", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Aaron Ness", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Jordan Oesterle", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Michael Chaput", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Christian Dvorak", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Barrett Hayton", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Brad Richardson", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Nick Schmaltz", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Carl Soderberg", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Derek Stepan", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Vinnie Hinostroza", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Brayden Burke", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Lawson Crouse", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Taylor Hall", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Clayton Keller", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Hudson Fasching", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Christian Fischer", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Conor Garland", goals: 0, assists: 0,  state: "active"}, 
-	{name:  
-	"Michael Grabner", goals: 0, assists: 0,  state: "active"}, 
-	{name: 
-	"Phil Kessel", goals: 0, assists: 0,  state: "active"} ];
+	coyotes = [ {name: "Loui Eriksson", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Christian Fischer", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Phil Kessel", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Clayton Keller", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Lawson Crouse", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Ryan Dzingel", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Alex Galchenyuk", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Dmitrij Jaskin", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Andrew Ladd", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Johan Larsson", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Liam O&#39;Brien", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Antoine Roussel", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Jay Beagle", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Travis Boyd", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Barrett Hayton", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Riley Nash", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Nick Schmaltz", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Kyle Capobianco", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jakob Chychrun", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Cam Dineen", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Shayne Gostisbehere", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Vladislav Kolyachonok", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Ilya Lyubushkin", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Dysin Mayo", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Janis Moser", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Victor Soderstrom", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Anton Stralman", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Conor Timmins", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	bruins = [ {name: "Brandon Carlo", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Zdeno Chara", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Connor Clifton", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Matt Grzelcyk", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Torey Krug", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jeremy Lauzon", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Charlie McAvoy", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kevan Miller", goals: 0, assists: 0,  state: "active"}, {name:  
-	"John Moore", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Urho Vaakanainen", goals: 0, assists: 0,  state: "active"}, {name: 
-	"Patrice Bergeron", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Charlie Coyle", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Trent Frederic", goals: 0, assists: 0,  state: "active"}, {name:  
-	"David Krejci", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Karson Kuhlman", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Sean Kuraly", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Par Lindholm", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Joakim Nordstrom", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jack Studnicka", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Anders Bjork", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jake DeBrusk", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brad Marchand", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nick Ritchie", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ondrej Kase", goals: 0, assists: 0,  state: "active"}, {name:  
-	"David Pastrnak", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Zachary Senyshyn", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Chris Wagner", goals: 0, assists: 0,  state: "active"} ];
+	bruins = [ {name: "David Pastrnak", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Craig Smith", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Anton Blidh", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Jake DeBrusk", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Nick Foligno", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Taylor Hall", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Erik Haula", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Brad Marchand", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Patrice Bergeron", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Charlie Coyle", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Trent Frederic", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Karson Kuhlman", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Curtis Lazar", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Tomas Nosek", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Oskar Steen", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Brandon Carlo", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Connor Clifton", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Derek Forbort", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Matt Grzelcyk", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Tyler Lewington", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Charlie McAvoy", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "John Moore", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Mike Reilly", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Urho Vaakanainen", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jakub Zboril", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	sabres = [ {name: "Rasmus Dahlin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"John Gilmour", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Matt Hunwick", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Henri Jokiharju", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jake McCabe", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Colin Miller", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brandon Montour", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Rasmus Ristolainen", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jack Eichel", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Zemgus Girgensons", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dominik Kahun", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Sam Reinhart", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Vladimir Sobotka", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Eric Staal", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tage Thompson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Johan Larsson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Victor Olofsson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jeff Skinner", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jimmy Vesey", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Michael Frolik", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Curtis Lazar", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kyle Okposo", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Wayne Simmonds", goals: 0, assists: 0,  state: "active"} ];
+	sabres = [ {name: "Vinnie Hinostroza", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Kyle Okposo", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Alex Tuch", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Anders Bjork", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Drake Caggiula", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Brett Murray", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Victor Olofsson", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Jeff Skinner", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Rasmus Asplund", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Dylan Cozens", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Cody Eakin", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Zemgus Girgensons", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "John Hayden", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Mark Jankowski", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Peyton Krebs", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Casey Mittelstadt", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Tage Thompson", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Jacob Bryson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Will Butcher", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Rasmus Dahlin", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Robert Hagg", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Henri Jokiharju", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Colin Miller", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Mark Pysyk", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	flames = [ {name: "Rasmus Andersson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"T. J. Brodie", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Derek Forbort", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mark Giordano", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Erik Gustafsson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Travis Hamonic", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Noah Hanifin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Oliver Kylington", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Michael Stone", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Juuso Valimaki", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alexander Yelesin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mikael Backlund", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Sam Bennett", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Austin Czarnik", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dillon Dube", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Byron Froese", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mark Jankowski", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Sean Monahan", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alan Quine", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Derek Ryan", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Johnny Gaudreau", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Milan Lucic", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Andrew Mangiapane", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tobias Rieder", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Zac Rinaldo", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Matthew Tkachuk", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Elias Lindholm", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Buddy Robinson", goals: 0, assists: 0,  state: "active"} ];
+	flames = [ {name: "Brett Ritchie", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Johnny Gaudreau", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Milan Lucic", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Andrew Mangiapane", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Matthew Tkachuk", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Mikael Backlund", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Blake Coleman", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Dillon Dube", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Trevor Lewis", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Elias Lindholm", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Sean Monahan", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Tyler Pitlick", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Brad Richardson", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Adam Ruzicka", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Rasmus Andersson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Erik Gudbranson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Noah Hanifin", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Oliver Kylington", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Michael Stone", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Christopher Tanev", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Nikita Zadorov", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	hurricanes = [ {name: "Jake Bean", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Haydn Fleury", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jake Gardiner", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dougie Hamilton", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Roland McKeown", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brett Pesce", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brady Skjei", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jaccob Slavin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Trevor van Riemsdyk", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Sami Vatanen", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Sebastian Aho", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Morgan Geekie", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Steven Lorentz", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Martin Necas", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jordan Staal", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Vincent Trocheck", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ryan Dzingel", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Warren Foegele", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jordan Martinook", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Max McCormick", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brock McGinn", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Teuvo Teravainen", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nino Niederreiter", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Andrei Svechnikov", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Justin Williams", goals: 0, assists: 0,  state: "active"} ];
+	hurricanes = [ {name: "Jesper Fast", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Nino Niederreiter", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Andrei Svechnikov", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Jordan Martinook", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Teuvo Teravainen", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Sebastian Aho", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Seth Jarvis", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Jesperi Kotkaniemi", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Steven Lorentz", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Martin Necas", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Jordan Staal", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Derek Stepan", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Vincent Trocheck", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Ethan Bear", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Ian Cole", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Tony DeAngelo", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jake Gardiner", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Joey Keane", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Brett Pesce", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Brady Skjei", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jaccob Slavin", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Brendan Smith", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	blackhawks = [ {name: "Nicolas Beaudin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Adam Boqvist", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Lucas Carlsson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Calvin de Haan", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Duncan Keith", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Slater Koekkoek", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Olli Maatta", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Connor Murphy", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alec Regula", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brent Seabrook", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nick Seeler", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kirby Dach", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Matthew Highmore", goals: 0, assists: 0,  state: "active"}, {name:  
-	"David Kampf", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Philipp Kurashev", goals: 0, assists: 0,  state: "active"}, {name:  
-	"John Quenneville", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dylan Sikura", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dylan Strome", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jonathan Toews", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Zack Smith", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ryan Carpenter", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Drake Caggiula", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brandon Hagel", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dominik Kubalik", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alexander Nylander", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brandon Saad", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alex DeBrincat", goals: 0, assists: 0,  state: "active"}, {name: 
-	"MacKenzie Entwistle", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Patrick Kane", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Andrew Shaw", goals: 0, assists: 0,  state: "active"} ];
+	blackhawks = [ {name: "Brett Connolly", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Alex DeBrincat", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "MacKenzie Entwistle", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Mike Hardman", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Reese Johnson", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Patrick Kane", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Brandon Hagel", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Jujhar Khaira", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Dominik Kubalik", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Josiah Slavin", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Ryan Carpenter", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Henrik Borgstrom", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Kirby Dach", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Tyler Johnson", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Philipp Kurashev", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Sam Lafferty", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Dylan Strome", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Jonathan Toews", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Nicolas Beaudin", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Calvin de Haan", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jakub Galvas", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Erik Gustafsson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Caleb Jones", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Seth Jones", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jake McCabe", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Connor Murphy", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Riley Stillman", goals: 0, assists: 0,  state: "active", line: "D"}];
 				
-	avalanche = [ {name: "Bowen Byram", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ian Cole", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kevin Connauton", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Sam Girard", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ryan Graves", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Erik Johnson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Anton Lindholm", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Cale Makar", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Conor Timmins", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nikita Zadorov", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Pierre-Edouard Bellemare", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Shane Bowers", goals: 0, assists: 0,  state: "active"}, {name:  
-	"J. T. Compher", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Sheldon Dries", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tyson Jost", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nazem Kadri", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nathan MacKinnon", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Vladislav Namestnikov", goals: 0, assists: 0,  state: "active"}, {name:  
-	"T. J. Tynan", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Andre Burakovsky", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Matt Calvert", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Gabriel Landeskog", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Matt Nieto", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Colin Wilson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Joonas Donskoi", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Valeri Nichushkin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Logan O&#39;Connor", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mikko Rantanen", goals: 0, assists: 0,  state: "active"} ];
+	avalanche = [ {name: "Nicolas Aube-Kubel", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Valeri Nichushkin", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Logan O&#39;Connor", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Mikko Rantanen", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Mikhail Maltsev", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Andre Burakovsky", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Gabriel Landeskog", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Stefan Matteau", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "J. T. Compher", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Darren Helm", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Tyson Jost", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Nazem Kadri", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Nathan MacKinnon", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Alex Newhook", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Bowen Byram", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Sam Girard", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Erik Johnson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jack Johnson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Kurtis MacDermid", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jacob MacDonald", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Cale Makar", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Ryan Murray", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Devon Toews", goals: 0, assists: 0,  state: "active", line: "D"}];
 				
-	bluejackets = [ {name: "Gabriel Carlsson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Adam Clendening", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Vladislav Gavrikov", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Scott Harrington", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Seth Jones", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dean Kukan", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ryan Murray", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Markus Nutivaara", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Andrew Peeke", goals: 0, assists: 0,  state: "active"}, {name:  
-	"David Savard", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Zach Werenski", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Pierre-Luc Dubois", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Liam Foudy", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Boone Jenner", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Riley Nash", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Devin Shore", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kevin Stenlund", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alexandre Texier", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alexander Wennberg", goals: 0, assists: 0,  state: "active"}, {name: 
-	"Brandon Dubinsky", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nick Foligno", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nathan Gerbe", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Stefan Matteau", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Gustav Nyquist", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Eric Robinson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Josh Anderson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Cam Atkinson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Emil Bemstrom", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Oliver Bjorkstrand", goals: 0, assists: 0,  state: "active"} ];
+	bluejackets = [ {name: "Emil Bemstrom", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Oliver Bjorkstrand", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Yegor Chinakhov", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Justin Danforth", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Patrik Laine", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Jakub Voracek", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Nathan Gerbe", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Gustav Nyquist", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Eric Robinson", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Max Domi", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Josh Dunne", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Liam Foudy", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Boone Jenner", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Sean Kuraly", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Jack Roslovic", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Cole Sillinger", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Alexandre Texier", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Adam Boqvist", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Gavin Bayreuther", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jake Bean", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Gabriel Carlsson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Vladislav Gavrikov", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Dean Kukan", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Andrew Peeke", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Zach Werenski", goals: 0, assists: 0,  state: "active", line: "D"}];
 	
-	stars = [ {name: "Gavin Bayreuther", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Taylor Fedun", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Joel Hanley", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Thomas Harley", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Miro Heiskanen", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Stephen Johns", goals: 0, assists: 0,  state: "active"}, {name:  
-	"John Klingberg", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Esa Lindell", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jamie Oleksiak", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Andrej Sekera", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ty Dellandrea", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Justin Dowling", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Radek Faksa", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tyler Seguin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jason Dickinson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Roope Hintz", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Blake Comeau", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jamie Benn", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Andrew Cogliano", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Denis Gurianov", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mattias Janmark", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Joel Kiviranta", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jason Robertson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nick Caamano", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Corey Perry", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alexander Radulov", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Joe Pavelski", goals: 0, assists: 0,  state: "active"} ];
+	stars = [ {name: "Joe Pavelski", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Alexander Radulov", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Jamie Benn", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Denis Gurianov", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Joel Kiviranta", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Michael Raffl", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Jason Robertson", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Riley Tufte", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Roope Hintz", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Riley Damiani", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Radek Faksa", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Luke Glendening", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Tanner Kero", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Jacob Peterson", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Tyler Seguin", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Jani Hakanpaa", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Joel Hanley", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Thomas Harley", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Miro Heiskanen", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "John Klingberg", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Esa Lindell", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Andrej Sekera", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Ryan Suter", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	redwings = [ {name: "Alex Biega", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Madison Bowey", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Trevor Daley", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Danny DeKeyser", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jonathan Ericsson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Cody Goloubef", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Patrik Nemeth", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kyle Brodziak", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Christoffer Ehn", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Robby Fabbri", goals: 0, assists: 0,  state: "active"}, {name: 
-	"Valtteri Filppula", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Sam Gagner", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Luke Glendening", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Darren Helm", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dylan Larkin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Frans Nielsen", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Justin Abdelkader", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tyler Bertuzzi", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Adam Erne", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brendan Perlini", goals: 0, assists: 0,  state: "active"}, {name: 
-	"Dmytro Timashov", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Anthony Mantha", goals: 0, assists: 0,  state: "active"} ];
+	redwings = [ {name: "Lucas Raymond", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Givani Smith", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Filip Zadina", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Tyler Bertuzzi", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Adam Erne", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Taro Hirose", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Jakub Vrana", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Robby Fabbri", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Sam Gagner", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Dylan Larkin", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Vladislav Namestnikov", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Michael Rasmussen", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Carter Rowney", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Mitchell Stephens", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Pius Suter", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Joe Veleno", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Danny DeKeyser", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Filip Hronek", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Nick Leddy", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Gustav Lindstrom", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jordan Oesterle", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Moritz Seider", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Marc Staal", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Troy Stecher", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	oilers = [ {name: "Ethan Bear", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Matt Benning", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Evan Bouchard", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Philip Broberg", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Caleb Jones", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Oscar Klefbom", goals: 0, assists: 0,  state: "active"}, {name:  
-	"William Lagesson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Adam Larsson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Darnell Nurse", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kris Russell", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Andreas Athanasiou", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Leon Draisaitl", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Gaetan Haas", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Cooper Marody", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Connor McDavid", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ryan McLeod", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ryan Nugent-Hopkins", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Riley Sheahan", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tyler Benson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tyler Ennis", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jujhar Khaira", goals: 0, assists: 0,  state: "active"}, {name:  
-	"James Neal", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Josh Archibald", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alex Chiasson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Zack Kassian", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Patrick Russell", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kailer Yamamoto", goals: 0, assists: 0,  state: "active"} ];
+	oilers = [ {name: "Josh Archibald", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Zack Kassian", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Jesse Puljujarvi", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Kailer Yamamoto", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Tyler Benson", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Warren Foegele", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Zach Hyman", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Brendan Perlini", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Leon Draisaitl", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Connor McDavid", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Ryan McLeod", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Ryan Nugent-Hopkins", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Derek Ryan", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Colton Sceviour", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Devin Shore", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Kyle Turris", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Tyson Barrie", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Evan Bouchard", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Cody Ceci", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Duncan Keith", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Oscar Klefbom", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Slater Koekkoek", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "William Lagesson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Darnell Nurse", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Kris Russell", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	panthers = [ {name: "Josh Brown", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Aaron Ekblad", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brady Keeper", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mike Matheson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Chase Priskie", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mark Pysyk", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Riley Stillman", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Anton Stralman", goals: 0, assists: 0,  state: "active"}, {name:  
-	"MacKenzie Weegar", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Keith Yandle", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Noel Acciari", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Aleksander Barkov", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brian Boyle", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Colton Sceviour", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dominic Toninato", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Frank Vatrano", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Lucas Wallmark", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Evgenii Dadonov", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Erik Haula", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mike Hoffman", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jonathan Huberdeau", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dryden Hunt", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brett Connolly", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Owen Tippett", goals: 0, assists: 0,  state: "active"} ];
+	panthers = [ {name: "Patric Hornqvist", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Owen Tippett", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Anthony Duclair", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Jonathan Huberdeau", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Ryan Lomberg", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Mason Marchment", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Noel Acciari", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Aleksander Barkov", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Sam Bennett", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Aleksi Heponiemi", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Anton Lundell", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Eetu Luostarinen", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Maxim Mamin", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Sam Reinhart", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Joe Thornton", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Frank Vatrano", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Carter Verhaeghe", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Lucas Carlsson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Aaron Ekblad", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Gustav Forsling", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Radko Gudas", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Olli Juolevi", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Matt Kiersted", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Brandon Montour", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Markus Nutivaara", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Chase Priskie", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "MacKenzie Weegar", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	kings = [ {name: "Mikey Anderson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Drew Doughty", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ben Hutton", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kurtis MacDermid", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Matt Roy", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Joakim Ryan", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Sean Walker", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Michael Amadio", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Anze Kopitar", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Blake Lizotte", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Gabriel Vilardi", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jeff Carter", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Trevor Lewis", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Adrian Kempe", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Trevor Moore", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Austin Wagner", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alex Iafallo", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dustin Brown", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Martin Frk", goals: 0, assists: 0,  state: "active"} ];
+	kings = [ {name: "Viktor Arvidsson", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Dustin Brown", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Samuel Fagemo", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Martin Frk", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Alex Iafallo", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Andreas Athanasiou", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Carl Grundstrom", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Arthur Kaliyev", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Adrian Kempe", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Brendan Lemieux", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Trevor Moore", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Lias Andersson", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Phillip Danault", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Anze Kopitar", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Rasmus Kupari", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Blake Lizotte", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Alex Turcotte", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Mikey Anderson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Tobias Bjornfot", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Drew Doughty", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Sean Durzi", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Alexander Edler", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Olli Maatta", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jacob Moverare", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Matt Roy", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Sean Walker", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Christian Wolanin", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	wild = [ {name: "Matt Bartkowski", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Louie Belpedio", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jonas Brodin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Matt Dumba", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brad Hunt", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Greg Pateryn", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Carson Soucy", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jared Spurgeon", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ryan Suter", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nick Bjugstad", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ryan Donato", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Joel Eriksson Ek", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Luke Johnson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mikko Koivu", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Luke Kunin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Victor Rask", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kyle Rau", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nico Sturm", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Marcus Foligno", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jordan Greenway", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Zach Parise", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alex Galchenyuk", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Marcus Johansson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kevin Fiala", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ryan Hartman", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Gerald Mayhew", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mats Zuccarello", goals: 0, assists: 0,  state: "active"} ];
+	wild = [ {name: "Kevin Fiala", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Ryan Hartman", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Mats Zuccarello", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Matthew Boldy", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Brandon Duhaime", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Marcus Foligno", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Jordan Greenway", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Kirill Kaprizov", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Nick Bjugstad", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Connor Dewar", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Joel Eriksson Ek", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Frederick Gaudreau", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Rem Pitlick", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Victor Rask", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Marco Rossi", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Nico Sturm", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Calen Addison", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jordie Benn", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jonas Brodin", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Matt Dumba", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Alex Goligoski", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Dmitry Kulikov", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Dakota Mermis", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jon Merrill", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jared Spurgeon", goals: 0, assists: 0,  state: "active", line: "D"}];
 
-	canadiens = [ {name: "Ben Chiarot", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Joel Edmundson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Cale Fleury", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Christian Folin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Noah Juulsen", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brett Kulak", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Victor Mete", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Gustav Olofsson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Xavier Ouellet", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jeff Petry", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alexander Romanov", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Shea Weber", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Phillip Danault", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Max Domi", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jake Evans", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jesperi Kotkaniemi", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ryan Poehling", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nick Suzuki", goals: 0, assists: 0,  state: "active"}, {name: 
-	"Jordan Weal", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Paul Byron", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jonathan Drouin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Charles Hudon", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Artturi Lehkonen", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tomas Tatar", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Joel Armia", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alex Belzile", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brendan Gallagher", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dale Weise", goals: 0, assists: 0,  state: "active"} ];
+	canadiens = [ {name: "Josh Anderson", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Joel Armia", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Alex Belzile", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Cole Caufield", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Brendan Gallagher", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Tyler Toffoli", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Jesse Ylonen", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Paul Byron", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Jonathan Drouin", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Rafael Harvey-Pinard", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Mike Hoffman", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Artturi Lehkonen", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Mathieu Perreault", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Michael Pezzetta", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Laurent Dauphin", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Christian Dvorak", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Jake Evans", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Cedric Paquette", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Rem Pitlick", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Ryan Poehling", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Nick Suzuki", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Lukas Vejdemo", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Ben Chiarot", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Kale Clague", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Joel Edmundson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Brett Kulak", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Sami Niku", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jeff Petry", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Alexander Romanov", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "David Savard", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Corey Schueneman", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Shea Weber", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Chris Wideman", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	predators = [ {name: "Alexandre Carrier", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mattias Ekholm", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ryan Ellis", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dante Fabbro", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Korbinian Holzer", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Roman Josi", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jarred Tinordi", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Yannick Weber", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Colin Blackwell", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nick Bonino", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Matt Duchene", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mikael Granlund", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Rocco Grimaldi", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Calle Jarnkrok", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ryan Johansen", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Michael McCarron", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Colton Sissons", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Yakov Trenin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kyle Turris", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Viktor Arvidsson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Filip Forsberg", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Austin Watson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Craig Smith", goals: 0, assists: 0,  state: "active"} ];
+	predators = [ {name: "Mikael Granlund", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Matt Luff", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Eeli Tolvanen", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Filip Forsberg", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Tanner Jeannot", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Nick Cousins", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Matt Duchene", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Rocco Grimaldi", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Ryan Johansen", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Luke Kunin", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Michael McCarron", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Tommy Novak", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Colton Sissons", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Philip Tomasino", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Yakov Trenin", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Matt Benning", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Mark Borowiecki", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Alexandre Carrier", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Mattias Ekholm", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Dante Fabbro", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Ben Harpur", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Roman Josi", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Philippe Myers", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Matt Tennyson", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	devils = [ {name: "Will Butcher", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Connor Carrick", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Fredrik Claesson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dakota Mermis", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mirco Mueller", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Damon Severson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"P. K. Subban", goals: 0, assists: 0,  state: "active"}, {name:  
-	"John Hayden", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nico Hischier", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jack Hughes", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Janne Kuokkanen", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Michael McLeod", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kevin Rooney", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Pavel Zacha", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Travis Zajac", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jesper Bratt", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nikita Gusev", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Miles Wood", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Joey Anderson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kyle Palmieri", goals: 0, assists: 0,  state: "active"} ];
+	devils = [ {name: "Nathan Bastian", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Marian Studenic", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Jesper Boqvist", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Jesper Bratt", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "A. J. Greer", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Andreas Johnsson", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Tomas Tatar", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Jimmy Vesey", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Miles Wood", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Yegor Sharangovich", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Chase De Leo", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Nico Hischier", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Jack Hughes", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Janne Kuokkanen", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Michael McLeod", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Dawson Mercer", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Tyce Thompson", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Pavel Zacha", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Mason Geertsen", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Ryan Graves", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Dougie Hamilton", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Christian Jaros", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Damon Severson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jonas Siegenthaler", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Ty Smith", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "P. K. Subban", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Colton White", goals: 0, assists: 0,  state: "active", line: "D"}];
 	
-	islanders = [ {name: "Sebastian Aho", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Johnny Boychuk", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Noah Dobson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Andy Greene", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Thomas Hickey", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nick Leddy", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Scott Mayfield", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Adam Pelech", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ryan Pulock", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Devon Toews", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mathew Barzal", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Derick Brassard", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Casey Cizikas", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Leo Komarov", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jean-Gabriel Pageau", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Anthony Beauvillier", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Michael Dal Colle", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ross Johnston", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Otto Koivula", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tom Kuhnhackl", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Andrew Ladd", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Anders Lee", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Matt Martin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brock Nelson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Josh Bailey", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Cal Clutterbuck", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jordan Eberle", goals: 0, assists: 0,  state: "active"} ];
+	islanders = [ {name: "Josh Bailey", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Cal Clutterbuck", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Simon Holmstrom", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Kyle Palmieri", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Oliver Wahlstrom", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Anthony Beauvillier", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Kieffer Bellows", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Ross Johnston", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Anders Lee", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Matt Martin", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Brock Nelson", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Zach Parise", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Mathew Barzal", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Casey Cizikas", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Austin Czarnik", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Jean-Gabriel Pageau", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Sebastian Aho", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Zdeno Chara", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Noah Dobson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Andy Greene", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Grant Hutton", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Scott Mayfield", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Adam Pelech", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Ryan Pulock", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Robin Salo", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	rangers = [ {name: "Brandon Crawley", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tony DeAngelo", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Adam Fox", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Libor Hajek", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ryan Lindgren", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Darren Raddysh", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brendan Smith", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Marc Staal", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jacob Trouba", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Filip Chytil", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Steven Fogarty", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Micheal Haley", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brett Howden", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Vinni Lettieri", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Greg McKegg", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Danny O&#39;Regan", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ryan Strome", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mika Zibanejad", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Phillip Di Giuseppe", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tim Gettinger", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Chris Kreider", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brendan Lemieux", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Artemi Panarin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Pavel Buchnevich", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jesper Fast", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Julien Gauthier", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kaapo Kakko", goals: 0, assists: 0,  state: "active"} ];
+	rangers = [ {name: "Julien Gauthier", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Anthony Greco", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Kaapo Kakko", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Ryan Reaves", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Samuel Blais", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Tim Gettinger", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Dryden Hunt", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Chris Kreider", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Alexis Lafreni&egrave;re", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Artemi Panarin", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Barclay Goodrow", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Morgan Barron", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Jonny Brodzinski", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Filip Chytil", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Greg McKegg", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Kevin Rooney", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Ryan Strome", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Mika Zibanejad", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Adam Fox", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Libor Hajek", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Ryan Lindgren", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "K&#39;Andre Miller", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Patrik Nemeth", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Braden Schneider", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jarred Tinordi", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jacob Trouba", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	senators = [ {name: "Mark Borowiecki", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Thomas Chabot", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Andreas Englund", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ron Hainsey", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mike Reilly", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Christian Wolanin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nikita Zaitsev", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Artyom Zub", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Artem Anisimov", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Matthew Peca", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Chris Tierney", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Colin White", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Rudolfs Balcers", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Anthony Duclair", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nick Paul", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brady Tkachuk", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Connor Brown", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jayce Hawryluk", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Bobby Ryan", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Scott Sabourin", goals: 0, assists: 0,  state: "active"} ];
+	senators = [ {name: "Drake Batherson", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Connor Brown", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Scott Sabourin", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Logan Shaw", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Austin Watson", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Tyler Ennis", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Alex Formenton", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Nick Paul", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Zach Sanford", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Tim St&uuml;tzle", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Brady Tkachuk", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Dylan Gambrell", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Clark Bishop", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Adam Gaudette", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Josh Norris", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Shane Pinto", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Chris Tierney", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Colin White", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Jacob Bernard-Docker", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Erik Brannstrom", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Josh Brown", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Thomas Chabot", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Michael Del Zotto", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Max Guenette", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Dillon Heatherington", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Nick Holden", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Victor Mete", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Lassi Thomson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Nikita Zaitsev", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Artyom Zub", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	flyers = [ {name: "Justin Braun", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mark Friedman", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Shayne Gostisbehere", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Robert Hagg", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Samuel Morin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Philippe Myers", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Matt Niskanen", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nate Prosser", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ivan Provorov", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Travis Sanheim", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Andy Welinski", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tyler Wotherspoon", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Egor Zamula", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Connor Bunnaman", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Sean Couturier", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Morgan Frost", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Derek Grant", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kevin Hayes", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Scott Laughton", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nolan Patrick", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nate Thompson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Andy Andreoff", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Joel Farabee", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Claude Giroux", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Oskar Lindblom", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Michael Raffl", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Carsen Twarynski", goals: 0, assists: 0,  state: "active"}, {name:  
-	"James van Riemsdyk", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nicolas Aube-Kubel", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Travis Konecny", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tyler Pitlick", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jakub Voracek", goals: 0, assists: 0,  state: "active"} ];
+	flyers = [ {name: "Cam Atkinson", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Travis Konecny", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Zack MacEwen", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Joel Farabee", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Claude Giroux", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Oskar Lindblom", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "James van Riemsdyk", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Derick Brassard", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Patrick Brown", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Connor Bunnaman", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Jackson Cates", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Sean Couturier", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Morgan Frost", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Kevin Hayes", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Tanner Laczynski", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Scott Laughton", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Nate Thompson", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Max Willman", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Samuel Morin", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Justin Braun", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Kevin Connauton", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Ryan Ellis", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Ivan Provorov", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Rasmus Ristolainen", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Travis Sanheim", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Nick Seeler", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Keith Yandle", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Cameron York", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Egor Zamula", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	penguins = [ {name: "Kevin Czuczman", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brian Dumoulin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Pierre-Olivier Joseph", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jack Johnson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kris Letang", goals: 0, assists: 0,  state: "active"}, {name:  
-	"John Marino", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Marcus Pettersson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Juuso Riikola", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Chad Ruhwedel", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Justin Schultz", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Zach Aston-Reese", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Teddy Blueger", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Sidney Crosby", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Sam Lafferty", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Evgeni Malkin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jared McCann", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dominik Simon", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Phil Varone", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jake Guentzel", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Adam Johnson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Patrick Marleau", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Conor Sheary", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brandon Tanev", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jason Zucker", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Anthony Angello", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Patric Hornqvist", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kasperi Kapanen", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Bryan Rust", goals: 0, assists: 0,  state: "active"} ];
+	penguins = [ {name: "Anthony Angello", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Kasper Bjorkqvist", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Kasperi Kapanen", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Evan Rodrigues", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Bryan Rust", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Jake Guentzel", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Danton Heinen", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Brock McGinn", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Drew O&#39;Connor", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Jason Zucker", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Jeff Carter", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Zach Aston-Reese", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Teddy Blueger", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Brian Boyle", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Sidney Crosby", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Evgeni Malkin", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Dominik Simon", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Radim Zohorna", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Brian Dumoulin", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Mark Friedman", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Kris Letang", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "John Marino", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Mike Matheson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Marcus Pettersson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Juuso Riikola", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Chad Ruhwedel", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	sharks = [ {name: "Brandon Davidson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mario Ferraro", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nikolai Knyzhov", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jake Middleton", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Radim Simek", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Marc-Edouard Vlasic", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brent Burns", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nick DeSimone", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Erik Karlsson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dalton Prout", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Logan Couture", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Noah Gregor", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Joel Kellman", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Antti Suomela", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Joe Thornton", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alexander True", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dylan Gambrell", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Lean Bergmann", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Evander Kane", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Timo Meier", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tomas Hertl", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Marcus Sorensen", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kevin Labanc", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Stefan Noesen", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Melker Karlsson", goals: 0, assists: 0,  state: "active"} ];
+	sharks = [ {name: "Rudolfs Balcers", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Alexander Barabanov", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Kevin Labanc", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Nick Merkley", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Tomas Hertl", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Andrew Cogliano", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Jonathan Dahlen", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Jonah Gadjovich", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Timo Meier", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Matt Nieto", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Jeffrey Viel", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Jayden Halbgewachs", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Nick Bonino", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Logan Couture", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Noah Gregor", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Lane Pederson", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Scott Reedy", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Jasper Weatherby", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Brent Burns", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Mario Ferraro", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Erik Karlsson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Nicolas Meloche", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Ryan Merkley", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jake Middleton", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Radim Simek", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Marc-Edouard Vlasic", goals: 0, assists: 0,  state: "active", line: "D"}];
+	
+	kraken = [ {name: "Joonas Donskoi", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Jordan Eberle", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Calle Jarnkrok", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Max McCormick", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Jaden Schwartz", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Brandon Tanev", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Mason Appleton", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Colin Blackwell", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Ryan Donato", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Morgan Geekie", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Yanni Gourde", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Marcus Johansson", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Jared McCann", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Riley Sheahan", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Alexander True", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Alexander Wennberg", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Will Borgen", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Vince Dunn", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Haydn Fleury", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Mark Giordano", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Adam Larsson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jeremy Lauzon", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jamie Oleksiak", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Carson Soucy", goals: 0, assists: 0,  state: "active", line: "D"}] ;
 			
-	blues = [ {name: "Robert Bortuzzo", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jay Bouwmeester", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Vince Dunn", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Justin Faulk", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Carl Gunnarsson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Niko Mikkola", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Colton Parayko", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alex Pietrangelo", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Derrick Pouliot", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Marco Scandella", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jake Walman", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ivan Barbashev", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tyler Bozak", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Klim Kostin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jordan Kyrou", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ryan O&#39;Reilly", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brayden Schenn", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Oskar Sundqvist", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Robert Thomas", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Sammy Blais", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jacob de la Rose", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mackenzie MacEachern", goals: 0, assists: 0,  state: "active"}, {name:  
-	"David Perron", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Zach Sanford", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jaden Schwartz", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alexander Steen", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Troy Brouwer", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Austin Poganski", goals: 0, assists: 0,  state: "active"}, {name: 
-	"Vladimir Tarasenko", goals: 0, assists: 0,  state: "active"} ];
+	blues = [ {name: "Vladimir Tarasenko", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Pavel Buchnevich", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "James Neal", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "David Perron", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Brandon Saad", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Ivan Barbashev", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Tyler Bozak", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Logan Brown", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Dakota Joshua", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Klim Kostin", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Jordan Kyrou", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Ryan O&#39;Reilly", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Brayden Schenn", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Oskar Sundqvist", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Robert Thomas", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Robert Bortuzzo", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Justin Faulk", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Torey Krug", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Niko Mikkola", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Colton Parayko", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Scott Perunovich", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Calle Rosen", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Marco Scandella", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jake Walman", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	lightning = [ {name: "Zach Bogosian", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Erik Cernak", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Braydon Coburn", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Victor Hedman", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ryan McDonagh", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jan Rutta", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Luke Schenn", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mikhail Sergachev", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kevin Shattenkirk", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Anthony Cirelli", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Blake Coleman", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tyler Johnson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alex Killorn", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Cedric Paquette", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brayden Point", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Steven Stamkos", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mitchell Stephens", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Carter Verhaeghe", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Barclay Goodrow", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Yanni Gourde", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Patrick Maroon", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ondrej Palat", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mathieu Joseph", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nikita Kucherov", goals: 0, assists: 0,  state: "active"} ];
+	lightning = [ {name: "Mathieu Joseph", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Nikita Kucherov", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Corey Perry", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Taylor Raddysh", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Boris Katchouk", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Patrick Maroon", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Ondrej Palat", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Steven Stamkos", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Alex Barre-Boulet", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Pierre-Edouard Bellemare", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Anthony Cirelli", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Ross Colton", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Alex Killorn", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Brayden Point", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Gemel Smith", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Zach Bogosian", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Erik Cernak", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Callan Foote", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Victor Hedman", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Ryan McDonagh", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jan Rutta", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Mikhail Sergachev", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Andrej Sustr", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	mapleleafs = [ {name: "Tyson Barrie", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Cody Ceci", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Travis Dermott", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Justin Holl", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Timothy Liljegren", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Martin Marincin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jake Muzzin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Morgan Rielly", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Calle Rosen", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Rasmus Sandin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Frederik Gauthier", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alexander Kerfoot", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Denis Malgin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Auston Matthews", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nic Petan", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Evan Rodrigues", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jason Spezza", goals: 0, assists: 0,  state: "active"}, {name:  
-	"John Tavares", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kyle Clifford", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Pierre Engvall", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Zach Hyman", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Andreas Johnsson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nicholas Robertson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mitch Marner", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ilya Mikheyev", goals: 0, assists: 0,  state: "active"}, {name:  
-	"William Nylander", goals: 0, assists: 0,  state: "active"} ];
+	mapleleafs = [ {name: "Ondrej Kase", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Mitch Marner", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Ilya Mikheyev", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "William Nylander", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Wayne Simmonds", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Michael Bunting", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Kyle Clifford", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Pierre Engvall", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Nick Ritchie", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "David Kampf", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Alexander Kerfoot", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Auston Matthews", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Brett Seney", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Jason Spezza", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "John Tavares", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Alex Biega", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "T. J. Brodie", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Travis Dermott", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Justin Holl", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Timothy Liljegren", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Jake Muzzin", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Morgan Rielly", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Rasmus Sandin", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	canucks = [ {name: "Jordie Benn", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jalen Chatfield", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alexander Edler", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Oscar Fantenberg", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Quinn Hughes", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Olli Juolevi", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tyler Myers", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brogan Rafferty", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Troy Stecher", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Christopher Tanev", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jay Beagle", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Adam Gaudette", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tyler Graovac", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Bo Horvat", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Elias Pettersson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brandon Sutter", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tyler Motte", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Zack MacEwen", goals: 0, assists: 0,  state: "active"}, {name:  
-	"J. T. Miller", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Micheal Ferland", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tanner Pearson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Antoine Roussel", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Justin Bailey", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brock Boeser", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Loui Eriksson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jake Virtanen", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tyler Toffoli", goals: 0, assists: 0,  state: "active"} ];
+	canucks = [ {name: "Brock Boeser", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Alex Chiasson", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Conor Garland", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Vasily Podkolzin", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Micheal Ferland", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Nils Hoglander", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Tanner Pearson", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "J. T. Miller", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Jason Dickinson", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Tyler Motte", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Justin Dowling", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Matthew Highmore", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Bo Horvat", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Juho Lammikko", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Elias Pettersson", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Brandon Sutter", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Kyle Burroughs", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Oliver Ekman-Larsson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Travis Hamonic", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Quinn Hughes", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Brad Hunt", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Noah Juulsen", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Brady Keeper", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Tyler Myers", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Tucker Poolman", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Luke Schenn", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	goldenknights = [ {name: "Dylan Coghlan", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Deryk Engelland", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nicolas Hague", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nick Holden", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alec Martinez", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brayden McNabb", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jon Merrill", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nate Schmidt", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Shea Theodore", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Zach Whitecloud", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Patrick Brown", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nick Cousins", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Reid Duke", goals: 0, assists: 0,  state: "active"}, {name:  
-	"William Karlsson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Peyton Krebs", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jonathan Marchessault", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tomas Nosek", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Paul Stastny", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Chandler Stephenson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"William Carrier", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Max Pacioretty", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Gage Quinney", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Keegan Kolesar", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ryan Reaves", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nicolas Roy", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Reilly Smith", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mark Stone", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alex Tuch", goals: 0, assists: 0,  state: "active"} ];
+	goldenknights = [ {name: "Evgenii Dadonov", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Keegan Kolesar", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Nicolas Roy", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Reilly Smith", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Mark Stone", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "William Carrier", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Mattias Janmark", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Max Pacioretty", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Michael Amadio", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Jack Eichel", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Brett Howden", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "William Karlsson", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Jonathan Marchessault", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Nolan Patrick", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Chandler Stephenson", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Jake Bischoff", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Dylan Coghlan", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Nicolas Hague", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Ben Hutton", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Alec Martinez", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Brayden McNabb", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Alex Pietrangelo", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Shea Theodore", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Zach Whitecloud", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	capitals = [ {name: "Alexander Alexeyev", goals: 0, assists: 0,  state: "active"}, {name:  
-	"John Carlson", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brenden Dillon", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Martin Fehervary", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Radko Gudas", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nick Jensen", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Michal Kempny", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tyler Lewington", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dmitry Orlov", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jonas Siegenthaler", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nicklas Backstrom", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nic Dowd", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Lars Eller", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Evgeny Kuznetsov", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Philippe Maillet", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Connor McMichael", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Brian Pinho", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Carl Hagelin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Ilya Kovalchuk", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Alexander Ovechkin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jakub Vrana", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Travis Boyd", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Garnet Hathaway", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Beck Malenstyn", goals: 0, assists: 0,  state: "active"}, {name:  
-	"T. J. Oshie", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Richard Panik", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Daniel Sprong", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tom Wilson", goals: 0, assists: 0,  state: "active"} ];
+	capitals = [ {name: "Garnet Hathaway", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Brett Leason", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Beck Malenstyn", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Anthony Mantha", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "T. J. Oshie", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Daniel Sprong", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Tom Wilson", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Carl Hagelin", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Alexander Ovechkin", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Conor Sheary", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Nicklas Backstrom", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Nic Dowd", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Lars Eller", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Evgeny Kuznetsov", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Connor McMichael", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Aliaksei Protas", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "John Carlson", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Dennis Cholowski", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Martin Fehervary", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Matt Irwin", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Nick Jensen", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Michal Kempny", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Dmitry Orlov", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Justin Schultz", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Trevor van Riemsdyk", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
-	jets = [ {name: "Nathan Beaulieu", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Anthony Bitetto", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Carl Dahlstrom", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dylan DeMelo", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Dmitry Kulikov", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Josh Morrissey", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Sami Niku", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Neal Pionk", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Tucker Poolman", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Luca Sbisa", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mason Appleton", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Andrew Copp", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Cody Eakin", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jansen Harkins", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mark Letestu", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Bryan Little", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Adam Lowry", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Jack Roslovic", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mark Scheifele", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nick Shore", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Gabriel Bourque", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Kyle Connor", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Nikolaj Ehlers", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Mathieu Perreault", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Patrik Laine", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Logan Shaw", goals: 0, assists: 0,  state: "active"}, {name:  
-	"Blake Wheeler", goals: 0, assists: 0,  state: "active"} ];
+	jets = [ {name: "Evgeny Svechnikov", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Blake Wheeler", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Kyle Connor", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Nikolaj Ehlers", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "C. J. Suess", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Kristian Vesalainen", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Andrew Copp", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Pierre-Luc Dubois", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "David Gustafsson", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Jansen Harkins", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Bryan Little", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Adam Lowry", goals: 0, assists: 0,  state: "active", line: "2"},
+	{name: "Cole Perfetti", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Kristian Reichel", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Mark Scheifele", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Paul Stastny", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Dominic Toninato", goals: 0, assists: 0,  state: "active", line: "3"},
+	{name: "Nathan Beaulieu", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Dylan DeMelo", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Brenden Dillon", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Josh Morrissey", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Neal Pionk", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Dylan Samberg", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Nate Schmidt", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Logan Stanley", goals: 0, assists: 0,  state: "active", line: "D"}];
 	
 	for(var i=0; i<ducks.length; i++){
 		document.getElementById("ducks").innerHTML += "<p>"+ducks[i].name+"</p>";
@@ -932,6 +916,9 @@ function init(){
 	for(var i=0; i<sharks.length; i++){
 		document.getElementById("sharks").innerHTML += "<p>"+sharks[i].name+"</p>";
 	}
+	for(var i=0; i<kraken.length; i++){
+		document.getElementById("kraken").innerHTML += "<p>"+kraken[i].name+"</p>";
+	}
 	for(var i=0; i<blues.length; i++){
 		document.getElementById("blues").innerHTML += "<p>"+blues[i].name+"</p>";
 	}
@@ -961,5 +948,5 @@ var ducks, coyotes, bruins, sabres, flames, hurricanes,
 	blackhawks, avalanche, bluejackets, stars, redwings, 
 	oilers, panthers, kings, wild, canadiens, predators, 
 	devils, islanders, rangers, senators, flyers, 
-	penguins, sharks, blues, lightning, mapleleafs, 
+	penguins, sharks, kraken, blues, lightning, mapleleafs, 
 	canucks, goldenknights, capitals, jets;
