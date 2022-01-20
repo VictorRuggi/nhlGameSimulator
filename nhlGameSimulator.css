@@ -149,6 +149,10 @@ input:hover{
 	background: teal;
 }
 
+#kraken:hover {
+	background: #99D9D9;
+}
+
 #canucks:hover {
 	background: #00843d;
 }
