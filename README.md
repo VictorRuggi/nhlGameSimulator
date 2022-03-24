@@ -1,2 +1,2 @@
 # nhlGameSimulator
-New and Improved NHL Game Simulator now with some good music to listen to. Or not. It's your call if you want to listen to the music, but I will remind you that the playlist is NON-STOP (no pause or stop button once the play button is hit).
+As of 3/24/2022, NHL Game Simulator now allows users to select which goalies to dress for each game! Inspired by my NFL Game Simulator's ability for users to choose which quarterbacks to start.
