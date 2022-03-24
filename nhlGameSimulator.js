@@ -5199,7 +5199,7 @@ function awayqb2(e){
 	var evt = e || window.event;
 	var t = evt.target || evt.srcElement;
 	
-	document.getElementById("header-text").innerHTML = "<p>"+team1[4]+" has named "+team1[6][0].name+" their starting goalie</p>";
+	document.getElementById("header-text").innerHTML = "<p>"+team1[4]+" has named "+team1[6][1].name+" their starting goalie</p>";
 	team1[6][1].state = "active";
 	
 	document.getElementById("awayqb1").disabled = true;
@@ -5229,7 +5229,7 @@ function homeqb2(e){
 	var evt = e || window.event;
 	var t = evt.target || evt.srcElement;
 	
-	document.getElementById("header-text").innerHTML = "<p>"+team2[4]+" has named "+team2[6][0].name+" their starting goalie</p>";
+	document.getElementById("header-text").innerHTML = "<p>"+team2[4]+" has named "+team2[6][1].name+" their starting goalie</p>";
 	team2[6][1].state = "active";
 	
 	document.getElementById("homeqb1").disabled = true;
