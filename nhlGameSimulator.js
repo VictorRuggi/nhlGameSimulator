@@ -867,8 +867,42 @@ function init (){
 	{name: "Nate Schmidt", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Logan Stanley", goals: 0, assists: 0,  state: "active", line: "D"}];
 	
-	team1 = [null, 0, null, null, null, null];
-	team2 = [null, 0, null, null, null, null];
+	/*GOALIES*/
+	ANAgoalies = [{name: "John Gibson", state: "inactive"}, {name: "Lukas Dostal", state: "inactive"}];
+	ARIgoalies = [{name: "Josef Korenar", state: "inactive"}, {name: "Harri Sateri", state: "inactive"}];
+	BOSgoalies = [{name: "Jeremy Swayman", state: "inactive"}, {name: "Linus Ullmark", state: "inactive"}];
+	BUFgoalies = [{name: "Craig Anderson", state: "inactive"}, {name: "Dustin Tokarski", state: "inactive"}];
+	CGYgoalies = [{name: "Jacob Markstrom", state: "inactive"}, {name: "Dan Vladar", state: "inactive"}];
+	CARgoalies = [{name: "Frederik Andersen", state: "inactive"}, {name: "Antti Raanta", state: "inactive"}];
+	CHIgoalies = [{name: "Kevin Lankinen", state: "inactive"}, {name: "Collin Delia", state: "inactive"}];
+	COLgoalies = [{name: "Darcy Kuemper", state: "inactive"}, {name: "Pavel Francouz", state: "inactive"}];
+	CBJgoalies = [{name: "Joonas Korpisalo", state: "inactive"}, {name: "Elvis Merzlikins", state: "inactive"}];
+	DALgoalies = [{name: "Jake Oettinger", state: "inactive"}, {name: "Scott Wedgewood", state: "inactive"}];
+	DETgoalies = [{name: "Alex Nedeljkovic", state: "inactive"}, {name: "Thomas Greiss", state: "inactive"}];
+	EDMgoalies = [{name: "Mikko Koskinen", state: "inactive"}, {name: "Mike Smith", state: "inactive"}];
+	FLAgoalies = [{name: "Sergei Bobrovsky", state: "inactive"}, {name: "Spencer Knight", state: "inactive"}];
+	LAgoalies = [{name: "Jonathan Quick", state: "inactive"}, {name: "Cal Petersen", state: "inactive"}];
+	MINgoalies = [{name: "Marc-Andr&eacute; Fleury", state: "inactive"}, {name: "Cam Talbot", state: "inactive"}];
+	MTLgoalies = [{name: "Samuel Montembeault", state: "inactive"}, {name: "Jake Allen", state: "inactive"}];
+	NSHgoalies = [{name: "Juuse Saros", state: "inactive"}, {name: "David Rittich", state: "inactive"}];
+	NJgoalies = [{name: "Nico Daws", state: "inactive"}, {name: "Jon Gillies", state: "inactive"}];
+	NYIgoalies = [{name: "Semyon Varlamov", state: "inactive"}, {name: "Ilya Sorokin", state: "inactive"}];
+	NYRgoalies = [{name: "Igor Shesterkin", state: "inactive"}, {name: "Alexandar Georgiev", state: "inactive"}];
+	OTTgoalies = [{name: "Anton Forsberg", state: "inactive"}, {name: "Filip Gustavsson", state: "inactive"}];
+	PHIgoalies = [{name: "Carter Hart", state: "inactive"}, {name: "Martin Jones", state: "inactive"}];
+	PITgoalies = [{name: "Tristan Jarry", state: "inactive"}, {name: "Casey DeSmith", state: "inactive"}];
+	SJgoalies = [{name: "Kaapo Kahkonen", state: "inactive"}, {name: "Adin Hill", state: "inactive"}];
+	SEAgoalies = [{name: "Philipp Grubauer", state: "inactive"}, {name: "Chris Driedger", state: "inactive"}];
+	STLgoalies = [{name: "Jordan Binnington", state: "inactive"}, {name: "Ville Husso", state: "inactive"}];
+	TBgoalies = [{name: "Andrei Vasilevskiy", state: "inactive"}, {name: "Brian Elliott", state: "inactive"}];
+	TORgoalies = [{name: "Petr Mrazek", state: "inactive"}, {name: "Erik Kallgren", state: "inactive"}];
+	VANgoalies = [{name: "Thatcher Demko", state: "inactive"}, {name: "Jaroslav Halak", state: "inactive"}];
+	VGKgoalies = [{name: "Logan Thompson", state: "inactive"}, {name: "Laurent Brossoit", state: "inactive"}];
+	WSHgoalies = [{name: "Ilya Samsonov", state: "inactive"}, {name: "Vitek Vanecek", state: "inactive"}];
+	WPGgoalies = [{name: "Connor Hellebuyck", state: "inactive"}, {name: "Eric Comrie", state: "inactive"}];
+	
+	team1 = [null, 0, null, null, null, null, null];
+	team2 = [null, 0, null, null, null, null, null];
 	
 	for(var i=0; i<teamButtons.length; i++){
 		addEvent(teamButtons[i], "click", teamSelect);
@@ -1022,12 +1056,21 @@ function resetAll(e){
 	document.getElementById("box-score").innerHTML = "";
 	document.getElementById("box-score").style.visibility = "hidden";
 	
+	//CLEAR SIMULATION AREA
+	document.getElementById("simulation").innerHTML = "<p id=\"simulation\"></p>";
+	document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Select Team 1 (Away)</p>";
+	
+	for(var i=0; i<teamButtons.length; i++){
+		teamButtons[i].disabled = false;
+	}
+	
 	//RESET THE INJURY REPORT
-	document.getElementById("injury-report").innerHTML = "<p>Indicate which players will not be playing in this game. Left side is the away team, right side is the home team. Please put one player per line. Apostrophes: &amp;#39;</p><textarea id=\"team1\" name=\"team1\"></textarea><textarea id=\"team2\" name=\"team2\"></textarea><input id=\"injury-submit\" type=\"button\" value=\"Submit\" />";
+	document.getElementById("injury-report").innerHTML = "<p>Indicate which players will not be playing in this game. Left side is the away team, right side is the home team. Please put one player per line. Apostrophes: &amp;#39;</p><textarea id=\"team1\" name=\"team1\"></textarea><textarea id=\"team2\" name=\"team2\"></textarea><p id=\"welcome-to-the-game\" style=\"visibility: hidden\"></p><div id=\"awayNHLTeam\" style=\"visibility: hidden\"><p id=\"awayTeam\"></p><p id=\"team1qb1\"></p><input type=\"button\" id=\"awayqb1\" value=\" 1 \" disabled=\"true\"/><p id=\"team1qb2\"></p><input type=\"button\" id=\"awayqb2\" value=\" 2 \" disabled=\"true\"/></div><div id=\"homeNHLTeam\" style=\"visibility: hidden\"><p id=\"homeTeam\"></p><p id=\"team2qb1\"></p><input type=\"button\" id=\"homeqb1\" value=\" 1 \" disabled=\"true\"/><p id=\"team2qb2\"></p><input type=\"button\" id=\"homeqb2\" value=\" 2 \" disabled=\"true\"/></div><input id=\"injury-submit\" type=\"button\" value=\"Submit\" />";
+	document.getElementById("injury-submit").disabled = true;
 	
 	//CLEAR ALL VALUES
-	team1 = [null, 0, null, null, null, null];
-	team2 = [null, 0, null, null, null, null];
+	team1 = [null, 0, null, null, null, null, null];
+	team2 = [null, 0, null, null, null, null, null];
 	
 	//EVERYONE GOES BACK TO 0 GOALS AND 0 ASSISTS
 	ducks = [ {name: "Buddy Robinson", goals: 0, assists: 0,  state: "active", line: "2"},
@@ -1878,13 +1921,39 @@ function resetAll(e){
 	{name: "Nate Schmidt", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Logan Stanley", goals: 0, assists: 0,  state: "active", line: "D"}];
 	
-	//CLEAR SIMULATION AREA
-	document.getElementById("simulation").innerHTML = "<p id=\"simulation\"></p>";
-	document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Select Team 1 (Away)</p>";
-	
-	for(var i=0; i<teamButtons.length; i++){
-		teamButtons[i].disabled = false;
-	}
+	/*RESET THE GOALIES*/
+	ANAgoalies = [{name: "John Gibson", state: "inactive"}, {name: "Lukas Dostal", state: "inactive"}];
+	ARIgoalies = [{name: "Josef Korenar", state: "inactive"}, {name: "Harri Sateri", state: "inactive"}];
+	BOSgoalies = [{name: "Jeremy Swayman", state: "inactive"}, {name: "Linus Ullmark", state: "inactive"}];
+	BUFgoalies = [{name: "Craig Anderson", state: "inactive"}, {name: "Dustin Tokarski", state: "inactive"}];
+	CGYgoalies = [{name: "Jacob Markstrom", state: "inactive"}, {name: "Dan Vladar", state: "inactive"}];
+	CARgoalies = [{name: "Frederik Andersen", state: "inactive"}, {name: "Antti Raanta", state: "inactive"}];
+	CHIgoalies = [{name: "Kevin Lankinen", state: "inactive"}, {name: "Collin Delia", state: "inactive"}];
+	COLgoalies = [{name: "Darcy Kuemper", state: "inactive"}, {name: "Pavel Francouz", state: "inactive"}];
+	CBJgoalies = [{name: "Joonas Korpisalo", state: "inactive"}, {name: "Elvis Merzlikins", state: "inactive"}];
+	DALgoalies = [{name: "Jake Oettinger", state: "inactive"}, {name: "Scott Wedgewood", state: "inactive"}];
+	DETgoalies = [{name: "Alex Nedeljkovic", state: "inactive"}, {name: "Thomas Greiss", state: "inactive"}];
+	EDMgoalies = [{name: "Mikko Koskinen", state: "inactive"}, {name: "Mike Smith", state: "inactive"}];
+	FLAgoalies = [{name: "Sergei Bobrovsky", state: "inactive"}, {name: "Spencer Knight", state: "inactive"}];
+	LAgoalies = [{name: "Jonathan Quick", state: "inactive"}, {name: "Cal Petersen", state: "inactive"}];
+	MINgoalies = [{name: "Marc-Andr&eacute; Fleury", state: "inactive"}, {name: "Cam Talbot", state: "inactive"}];
+	MTLgoalies = [{name: "Samuel Montembeault", state: "inactive"}, {name: "Jake Allen", state: "inactive"}];
+	NSHgoalies = [{name: "Juuse Saros", state: "inactive"}, {name: "David Rittich", state: "inactive"}];
+	NJgoalies = [{name: "Nico Daws", state: "inactive"}, {name: "Jon Gillies", state: "inactive"}];
+	NYIgoalies = [{name: "Semyon Varlamov", state: "inactive"}, {name: "Ilya Sorokin", state: "inactive"}];
+	NYRgoalies = [{name: "Igor Shesterkin", state: "inactive"}, {name: "Alexandar Georgiev", state: "inactive"}];
+	OTTgoalies = [{name: "Anton Forsberg", state: "inactive"}, {name: "Filip Gustavsson", state: "inactive"}];
+	PHIgoalies = [{name: "Carter Hart", state: "inactive"}, {name: "Martin Jones", state: "inactive"}];
+	PITgoalies = [{name: "Tristan Jarry", state: "inactive"}, {name: "Casey DeSmith", state: "inactive"}];
+	SJgoalies = [{name: "Kaapo Kahkonen", state: "inactive"}, {name: "Adin Hill", state: "inactive"}];
+	SEAgoalies = [{name: "Philipp Grubauer", state: "inactive"}, {name: "Chris Driedger", state: "inactive"}];
+	STLgoalies = [{name: "Jordan Binnington", state: "inactive"}, {name: "Ville Husso", state: "inactive"}];
+	TBgoalies = [{name: "Andrei Vasilevskiy", state: "inactive"}, {name: "Brian Elliott", state: "inactive"}];
+	TORgoalies = [{name: "Petr Mrazek", state: "inactive"}, {name: "Erik Kallgren", state: "inactive"}];
+	VANgoalies = [{name: "Thatcher Demko", state: "inactive"}, {name: "Jaroslav Halak", state: "inactive"}];
+	VGKgoalies = [{name: "Logan Thompson", state: "inactive"}, {name: "Laurent Brossoit", state: "inactive"}];
+	WSHgoalies = [{name: "Ilya Samsonov", state: "inactive"}, {name: "Vitek Vanecek", state: "inactive"}];
+	WPGgoalies = [{name: "Connor Hellebuyck", state: "inactive"}, {name: "Eric Comrie", state: "inactive"}];
 }
 
 function teamSelect(e){
@@ -1923,6 +1992,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "ANA";
 				team1[5] = "Anaheim".toUpperCase();
+				team1[6] = ANAgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -1933,6 +2003,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "ARI";
 				team1[5] = "Arizona".toUpperCase();
+				team1[6] = ARIgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -1943,6 +2014,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "BOS";
 				team1[5] = "Boston".toUpperCase();
+				team1[6] = BOSgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -1953,6 +2025,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "BUF";
 				team1[5] = "Buffalo".toUpperCase();
+				team1[6] = BUFgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -1963,6 +2036,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "CGY";
 				team1[5] = "Calgary".toUpperCase();
+				team1[6] = CGYgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -1973,6 +2047,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "CAR";
 				team1[5] = "Carolina".toUpperCase();
+				team1[6] = CARgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -1983,6 +2058,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "CHI";
 				team1[5] = "Chicago".toUpperCase();
+				team1[6] = CHIgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -1993,6 +2069,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "COL";
 				team1[5] = "Colorado".toUpperCase();
+				team1[6] = COLgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2003,6 +2080,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "CBJ";
 				team1[5] = "Columbus".toUpperCase();
+				team1[6] = CBJgoalies;
 				team1[0] = "blue jackets";
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
@@ -2014,6 +2092,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "DAL";
 				team1[5] = "Dallas".toUpperCase();
+				team1[6] = DALgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2024,6 +2103,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "DET";
 				team1[5] = "Detroit".toUpperCase();
+				team1[6] = DETgoalies;
 				team1[0] = "red wings";
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
@@ -2035,6 +2115,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "EDM";
 				team1[5] = "Edmonton".toUpperCase();
+				team1[6] = EDMgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2045,6 +2126,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "FLA";
 				team1[5] = "Florida".toUpperCase();
+				team1[6] = FLAgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2055,6 +2137,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "LA";
 				team1[5] = "Los Angeles".toUpperCase();
+				team1[6] = LAgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2065,6 +2148,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "MIN";
 				team1[5] = "Minnesota".toUpperCase();
+				team1[6] = MINgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2075,6 +2159,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "MTL";
 				team1[5] = "Montreal".toUpperCase();
+				team1[6] = MTLgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2085,6 +2170,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "NSH";
 				team1[5] = "Nashville".toUpperCase();
+				team1[6] = NSHgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2095,6 +2181,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "NJ";
 				team1[5] = "New Jersey".toUpperCase();
+				team1[6] = NJgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2105,6 +2192,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "NYI";
 				team1[5] = "New York".toUpperCase();
+				team1[6] = NYIgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2115,6 +2203,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "NYR";
 				team1[5] = "New York".toUpperCase();
+				team1[6] = NYRgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2125,6 +2214,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "OTT";
 				team1[5] = "Ottawa".toUpperCase();
+				team1[6] = OTTgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2135,6 +2225,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "PHI";
 				team1[5] = "Philadelphia".toUpperCase();
+				team1[6] = PHIgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2145,6 +2236,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "PIT";
 				team1[5] = "Pittsburgh".toUpperCase();
+				team1[6] = PITgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2155,6 +2247,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "SJ";
 				team1[5] = "San Jose".toUpperCase();
+				team1[6] = SJgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2165,6 +2258,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "SEA";
 				team1[5] = "Seattle".toUpperCase();
+				team1[6] = SEAgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2175,6 +2269,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "STL";
 				team1[5] = "St. Louis".toUpperCase();
+				team1[6] = STLgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2185,6 +2280,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "TB";
 				team1[5] = "Tampa Bay".toUpperCase();
+				team1[6] = TBgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2195,6 +2291,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "TOR";
 				team1[5] = "Toronto".toUpperCase();
+				team1[6] = TORgoalies;
 				team1[0] = "maple leafs";
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
@@ -2206,6 +2303,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "VAN";
 				team1[5] = "Vancouver".toUpperCase();
+				team1[6] = VANgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2216,6 +2314,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "VGK";
 				team1[5] = "Vegas".toUpperCase();
+				team1[6] = VGKgoalies;
 				team1[0] = "golden knights";
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
@@ -2227,6 +2326,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "WSH";
 				team1[5] = "Washington".toUpperCase();
+				team1[6] = WSHgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2237,6 +2337,7 @@ function teamSelect(e){
 				team1[3] = "logos/"+team1[0]+".png";
 				team1[4] = "WPG";
 				team1[5] = "Winnipeg".toUpperCase();
+				team1[6] = WPGgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume1, 1000);
 				break;
@@ -2261,6 +2362,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "ANA";
 				team2[5] = "Anaheim".toUpperCase();
+				team2[6] = ANAgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2271,6 +2373,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "ARI";
 				team2[5] = "Arizona".toUpperCase();
+				team2[6] = ARIgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2281,6 +2384,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "BOS";
 				team2[5] = "Boston".toUpperCase();
+				team2[6] = BOSgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2291,6 +2395,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "BUF";
 				team2[5] = "Buffalo".toUpperCase();
+				team2[6] = BUFgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2301,6 +2406,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "CGY";
 				team2[5] = "Calgary".toUpperCase();
+				team2[6] = CGYgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2311,6 +2417,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "CAR";
 				team2[5] = "Carolina".toUpperCase();
+				team2[6] = CARgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2321,6 +2428,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "CHI";
 				team2[5] = "Chicago".toUpperCase();
+				team2[6] = CHIgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2331,6 +2439,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "COL";
 				team2[5] = "Colorado".toUpperCase();
+				team2[6] = COLgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2341,6 +2450,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "CBJ";
 				team2[5] = "Columbus".toUpperCase();
+				team2[6] = CBJgoalies;
 				team2[0] = "blue jackets";
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
@@ -2352,6 +2462,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "DAL";
 				team2[5] = "Dallas".toUpperCase();
+				team2[6] = DALgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2362,6 +2473,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "DET";
 				team2[5] = "Detroit".toUpperCase();
+				team2[6] = DETgoalies;
 				team2[0] = "red wings";
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
@@ -2373,6 +2485,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "EDM";
 				team2[5] = "Edmonton".toUpperCase();
+				team2[6] = EDMgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2383,6 +2496,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "FLA";
 				team2[5] = "Florida".toUpperCase();
+				team2[6] = FLAgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2393,6 +2507,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "LA";
 				team2[5] = "Los Angeles".toUpperCase();
+				team2[6] = LAgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2403,6 +2518,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "MIN";
 				team2[5] = "Minnesota".toUpperCase();
+				team2[6] = MINgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2413,6 +2529,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "MTL";
 				team2[5] = "Montreal".toUpperCase();
+				team2[6] = MTLgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2423,6 +2540,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "NSH";
 				team2[5] = "Nashville".toUpperCase();
+				team2[6] = NSHgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2433,6 +2551,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "NJ";
 				team2[5] = "New Jersey".toUpperCase();
+				team2[6] = NJgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2443,6 +2562,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "NYI";
 				team2[5] = "New York".toUpperCase();
+				team2[6] = NYIgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2453,6 +2573,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "NYR";
 				team2[5] = "New York".toUpperCase();
+				team2[6] = NYRgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2463,6 +2584,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "OTT";
 				team2[5] = "Ottawa".toUpperCase();
+				team2[6] = OTTgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2473,6 +2595,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "PHI";
 				team2[5] = "Philadelphia".toUpperCase();
+				team2[6] = PHIgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2483,6 +2606,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "PIT";
 				team2[5] = "Pittsburgh".toUpperCase();
+				team2[6] = PITgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2493,6 +2617,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "SJ";
 				team2[5] = "San Jose".toUpperCase();
+				team2[6] = SJgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2503,6 +2628,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "SEA";
 				team2[5] = "Seattle".toUpperCase();
+				team2[6] = SEAgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2513,6 +2639,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "STL";
 				team2[5] = "St. Louis".toUpperCase();
+				team2[6] = STLgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2523,6 +2650,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "TB";
 				team2[5] = "Tampa Bay".toUpperCase();
+				team2[6] = TBgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2533,6 +2661,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "TOR";
 				team2[5] = "Toronto".toUpperCase();
+				team2[6] = TORgoalies;
 				team2[0] = "maple leafs";
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
@@ -2544,6 +2673,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "VAN";
 				team2[5] = "Vancouver".toUpperCase();
+				team2[6] = VANgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2554,6 +2684,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "VGK";
 				team2[5] = "Vegas".toUpperCase();
+				team2[6] = VGKgoalies;
 				team2[0] = "golden knights";
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
@@ -2565,6 +2696,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "WSH";
 				team2[5] = "Washington".toUpperCase();
+				team2[6] = WSHgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -2575,6 +2707,7 @@ function teamSelect(e){
 				team2[3] = "logos/"+team2[0]+".png";
 				team2[4] = "WPG";
 				team2[5] = "Winnipeg".toUpperCase();
+				team2[6] = WPGgoalies;
 				document.getElementById("header-text").innerHTML = "<p id=\"header-text\">Please wait...</p>";
 				setTimeout(resume2, 1000);
 				break;
@@ -4111,6 +4244,40 @@ function thirdPeriod(team1, team2)
 			}
 			document.getElementById("box-score").innerHTML += "</table>";
 			
+			if(team1[1] > team2[1]){
+				if(team1[6][0].state.valueOf() == "active"){
+					winningGoalie = team1[6][0].name;
+				}
+				else{
+					winningGoalie = team1[6][1].name;
+				}
+				if(team2[6][0].state.valueOf() == "active"){
+					losingGoalie = team2[6][0].name;
+				}
+				else{
+					losingGoalie = team2[6][1].name;
+				}
+				winner = team1[4];
+				loser = team2[4];
+			}
+			else{
+				if(team1[6][0].state.valueOf() == "active"){
+					losingGoalie = team1[6][0].name;
+				}
+				else{
+					losingGoalie = team1[6][1].name;
+				}
+				if(team2[6][0].state.valueOf() == "active"){
+					winningGoalie = team2[6][0].name;
+				}
+				else{
+					winningGoalie = team2[6][1].name;
+				}
+				winner = team2[4];
+				loser = team1[4];
+			}
+			document.getElementById("box-score").innerHTML += "<br/><p><b>WINNING GOALIE</b>&nbsp;"+winningGoalie+" ("+winner+")&nbsp;&nbsp;&nbsp;&nbsp;<b>LOSING GOALIE</b>&nbsp;"+losingGoalie+" ("+loser+")</p>";
+			
 			document.getElementById("reset-btn").disabled = false;
 		}
 }
@@ -4398,6 +4565,41 @@ function overtime(team1, team2)
 				document.getElementById("box-score").innerHTML += "<tr><td>"+team2[2][i].name+"</td>&emsp;&emsp;&emsp;<td><b>"+team2[2][i].goals+"</b> G</td>&emsp;&emsp;&emsp;<td><b>"+team2[2][i].assists+"</b> A &#9654;</td>&emsp;&emsp;&emsp;<td><b>"+( team2[2][i].goals + team2[2][i].assists )+"</b> P</td></tr><br/>";
 			}
 			document.getElementById("box-score").innerHTML += "</table>";
+			
+			if(team1[1] > team2[1]){
+				if(team1[6][0].state.valueOf() == "active"){
+					winningGoalie = team1[6][0].name;
+				}
+				else{
+					winningGoalie = team1[6][1].name;
+				}
+				if(team2[6][0].state.valueOf() == "active"){
+					losingGoalie = team2[6][0].name;
+				}
+				else{
+					losingGoalie = team2[6][1].name;
+				}
+				winner = team1[4];
+				loser = team2[4];
+			}
+			else{
+				if(team1[6][0].state.valueOf() == "active"){
+					losingGoalie = team1[6][0].name;
+				}
+				else{
+					losingGoalie = team1[6][1].name;
+				}
+				if(team2[6][0].state.valueOf() == "active"){
+					winningGoalie = team2[6][0].name;
+				}
+				else{
+					winningGoalie = team2[6][1].name;
+				}
+				winner = team2[4];
+				loser = team1[4];
+			}
+			document.getElementById("box-score").innerHTML += "<br/><p><b>WINNING GOALIE</b>&nbsp;"+winningGoalie+" ("+winner+")&nbsp;&nbsp;&nbsp;&nbsp;<b>LOSING GOALIE</b>&nbsp;"+losingGoalie+" ("+loser+")</p>";
+			
 			document.getElementById("reset-btn").disabled = false;
 	}
 	/*HOME TEAM WINS*/
@@ -4677,6 +4879,41 @@ function overtime(team1, team2)
 				document.getElementById("box-score").innerHTML += "<tr><td>"+team2[2][i].name+"</td>&emsp;&emsp;&emsp;<td><b>"+team2[2][i].goals+"</b> G</td>&emsp;&emsp;&emsp;<td><b>"+team2[2][i].assists+"</b> A &#9654;</td>&emsp;&emsp;&emsp;<td><b>"+( team2[2][i].goals + team2[2][i].assists )+"</b> P</td></tr><br/>";
 			}
 			document.getElementById("box-score").innerHTML += "</table>";
+			
+			if(team1[1] > team2[1]){
+				if(team1[6][0].state.valueOf() == "active"){
+					winningGoalie = team1[6][0].name;
+				}
+				else{
+					winningGoalie = team1[6][1].name;
+				}
+				if(team2[6][0].state.valueOf() == "active"){
+					losingGoalie = team2[6][0].name;
+				}
+				else{
+					losingGoalie = team2[6][1].name;
+				}
+				winner = team1[4];
+				loser = team2[4];
+			}
+			else{
+				if(team1[6][0].state.valueOf() == "active"){
+					losingGoalie = team1[6][0].name;
+				}
+				else{
+					losingGoalie = team1[6][1].name;
+				}
+				if(team2[6][0].state.valueOf() == "active"){
+					winningGoalie = team2[6][0].name;
+				}
+				else{
+					winningGoalie = team2[6][1].name;
+				}
+				winner = team2[4];
+				loser = team1[4];
+			}
+			document.getElementById("box-score").innerHTML += "<br/><p><b>WINNING GOALIE</b>&nbsp;"+winningGoalie+" ("+winner+")&nbsp;&nbsp;&nbsp;&nbsp;<b>LOSING GOALIE</b>&nbsp;"+losingGoalie+" ("+loser+")</p>";
+			
 			document.getElementById("reset-btn").disabled = false;
 	}
 }
@@ -4736,6 +4973,41 @@ function shootout(team1, team2)
 				document.getElementById("box-score").innerHTML += "<tr><td>"+team2[2][i].name+"</td>&emsp;&emsp;&emsp;<td><b>"+team2[2][i].goals+"</b> G</td>&emsp;&emsp;&emsp;<td><b>"+team2[2][i].assists+"</b> A &#9654;</td>&emsp;&emsp;&emsp;<td><b>"+( team2[2][i].goals + team2[2][i].assists )+"</b> P</td></tr><br/>";
 			}
 			document.getElementById("box-score").innerHTML += "</table>";
+			
+			if(team1[1] > team2[1]){
+				if(team1[6][0].state.valueOf() == "active"){
+					winningGoalie = team1[6][0].name;
+				}
+				else{
+					winningGoalie = team1[6][1].name;
+				}
+				if(team2[6][0].state.valueOf() == "active"){
+					losingGoalie = team2[6][0].name;
+				}
+				else{
+					losingGoalie = team2[6][1].name;
+				}
+				winner = team1[4];
+				loser = team2[4];
+			}
+			else{
+				if(team1[6][0].state.valueOf() == "active"){
+					losingGoalie = team1[6][0].name;
+				}
+				else{
+					losingGoalie = team1[6][1].name;
+				}
+				if(team2[6][0].state.valueOf() == "active"){
+					winningGoalie = team2[6][0].name;
+				}
+				else{
+					winningGoalie = team2[6][1].name;
+				}
+				winner = team2[4];
+				loser = team1[4];
+			}
+			document.getElementById("box-score").innerHTML += "<br/><p><b>WINNING GOALIE</b>&nbsp;"+winningGoalie+" ("+winner+")&nbsp;&nbsp;&nbsp;&nbsp;<b>LOSING GOALIE</b>&nbsp;"+losingGoalie+" ("+loser+")</p>";
+			
 			document.getElementById("reset-btn").disabled = false;
 	}
 	else
@@ -4787,6 +5059,41 @@ function shootout(team1, team2)
 				document.getElementById("box-score").innerHTML += "<tr><td>"+team2[2][i].name+"</td>&emsp;&emsp;&emsp;<td><b>"+team2[2][i].goals+"</b> G</td>&emsp;&emsp;&emsp;<td><b>"+team2[2][i].assists+"</b> A &#9654;</td>&emsp;&emsp;&emsp;<td><b>"+( team2[2][i].goals + team2[2][i].assists )+"</b> P</td></tr><br/>";
 			}
 			document.getElementById("box-score").innerHTML += "</table>";
+			
+			if(team1[1] > team2[1]){
+				if(team1[6][0].state.valueOf() == "active"){
+					winningGoalie = team1[6][0].name;
+				}
+				else{
+					winningGoalie = team1[6][1].name;
+				}
+				if(team2[6][0].state.valueOf() == "active"){
+					losingGoalie = team2[6][0].name;
+				}
+				else{
+					losingGoalie = team2[6][1].name;
+				}
+				winner = team1[4];
+				loser = team2[4];
+			}
+			else{
+				if(team1[6][0].state.valueOf() == "active"){
+					losingGoalie = team1[6][0].name;
+				}
+				else{
+					losingGoalie = team1[6][1].name;
+				}
+				if(team2[6][0].state.valueOf() == "active"){
+					winningGoalie = team2[6][0].name;
+				}
+				else{
+					winningGoalie = team2[6][1].name;
+				}
+				winner = team2[4];
+				loser = team1[4];
+			}
+			document.getElementById("box-score").innerHTML += "<br/><p><b>WINNING GOALIE</b>&nbsp;"+winningGoalie+" ("+winner+")&nbsp;&nbsp;&nbsp;&nbsp;<b>LOSING GOALIE</b>&nbsp;"+losingGoalie+" ("+loser+")</p>";
+			
 			document.getElementById("reset-btn").disabled = false;
 	}
 }
@@ -4803,6 +5110,30 @@ function injuryReport(team1, team2){
 	document.getElementById("injury-report").style.visibility = "visible";
 	document.getElementById("team1").placeholder = "Away team: " + team1[0].toUpperCase();
 	document.getElementById("team2").placeholder = "Home team: " + team2[0].toUpperCase();
+	
+	document.getElementById("welcome-to-the-game").style.visibility = "visible";
+	document.getElementById("awayNHLTeam").style.visibility = "visible";
+	document.getElementById("homeNHLTeam").style.visibility = "visible";
+	document.getElementById("injury-submit").style.visibility = "visible";
+	
+	document.getElementById("welcome-to-the-game").innerHTML = "<p></p>";
+	document.getElementById("awayTeam").innerHTML = "<p>"+team1[5].toUpperCase()+" "+team1[0].toUpperCase()+"</p>";
+	document.getElementById("homeTeam").innerHTML = "<p>"+team2[5].toUpperCase()+" "+team2[0].toUpperCase()+"</p>";
+	
+	document.getElementById("team1qb1").innerHTML = "<p>Click <b>1</b> to name <b>"+team1[6][0].name+"</b> your starting goalie. &nbsp;&nbsp;</p>";
+	document.getElementById("team1qb2").innerHTML = "<p>Click <b>2</b> to name <b>"+team1[6][1].name+"</b> your starting goalie. &nbsp;&nbsp;</p>";
+	document.getElementById("team2qb1").innerHTML = "<p>Click <b>1</b> to name <b>"+team2[6][0].name+"</b> your starting goalie. &nbsp;&nbsp;</p>";
+	document.getElementById("team2qb2").innerHTML = "<p>Click <b>2</b> to name <b>"+team2[6][1].name+"</b> your starting goalie. &nbsp;&nbsp;</p>";
+	
+	document.getElementById("awayqb1").disabled = false;
+	document.getElementById("awayqb2").disabled = false;
+	document.getElementById("homeqb1").disabled = false;
+	document.getElementById("homeqb2").disabled = false;
+	
+	addEvent(document.getElementById("awayqb1"), "click", awayqb1);
+	addEvent(document.getElementById("awayqb2"), "click", awayqb2);
+	addEvent(document.getElementById("homeqb1"), "click", homeqb1);
+	addEvent(document.getElementById("homeqb2"), "click", homeqb2);
 	
 	addEvent(document.getElementById("injury-submit"), "click", injurySubmit);
 }
@@ -4842,7 +5173,71 @@ function injurySubmit(e){
 	}
 	
 	document.getElementById("injury-report").style.visibility = "hidden";
+	document.getElementById("welcome-to-the-game").style.visibility = "hidden";
+	document.getElementById("awayNHLTeam").style.visibility = "hidden";
+	document.getElementById("homeNHLTeam").style.visibility = "hidden";
+	document.getElementById("injury-submit").disabled = true;
 	firstPeriod(team1, team2);
+}
+
+function awayqb1(e){
+	var evt = e || window.event;
+	var t = evt.target || evt.srcElement;
+	
+	document.getElementById("header-text").innerHTML = "<p>"+team1[4]+" has named "+team1[6][0].name+" their starting goalie</p>";
+	team1[6][0].state = "active";
+	
+	document.getElementById("awayqb1").disabled = true;
+	document.getElementById("awayqb2").disabled = true;
+	
+	if((team1[6][0].state.valueOf() == "active" || team1[6][1].state.valueOf() == "active") && (team2[6][0].state.valueOf() == "active" || team2[6][1].state.valueOf() == "active")){
+		document.getElementById("injury-submit").disabled = false;
+	}
+}
+
+function awayqb2(e){
+	var evt = e || window.event;
+	var t = evt.target || evt.srcElement;
+	
+	document.getElementById("header-text").innerHTML = "<p>"+team1[4]+" has named "+team1[6][0].name+" their starting goalie</p>";
+	team1[6][1].state = "active";
+	
+	document.getElementById("awayqb1").disabled = true;
+	document.getElementById("awayqb2").disabled = true;
+	
+	if((team1[6][0].state.valueOf() == "active" || team1[6][1].state.valueOf() == "active") && (team2[6][0].state.valueOf() == "active" || team2[6][1].state.valueOf() == "active")){
+		document.getElementById("injury-submit").disabled = false;
+	}
+}
+
+function homeqb1(e){
+	var evt = e || window.event;
+	var t = evt.target || evt.srcElement;
+	
+	document.getElementById("header-text").innerHTML = "<p>"+team2[4]+" has named "+team2[6][0].name+" their starting goalie</p>";
+	team2[6][0].state = "active";
+	
+	document.getElementById("homeqb1").disabled = true;
+	document.getElementById("homeqb2").disabled = true;
+	
+	if((team1[6][0].state.valueOf() == "active" || team1[6][1].state.valueOf() == "active") && (team2[6][0].state.valueOf() == "active" || team2[6][1].state.valueOf() == "active")){
+		document.getElementById("injury-submit").disabled = false;
+	}
+}
+
+function homeqb2(e){
+	var evt = e || window.event;
+	var t = evt.target || evt.srcElement;
+	
+	document.getElementById("header-text").innerHTML = "<p>"+team2[4]+" has named "+team2[6][0].name+" their starting goalie</p>";
+	team2[6][1].state = "active";
+	
+	document.getElementById("homeqb1").disabled = true;
+	document.getElementById("homeqb2").disabled = true;
+	
+	if((team1[6][0].state.valueOf() == "active" || team1[6][1].state.valueOf() == "active") && (team2[6][0].state.valueOf() == "active" || team2[6][1].state.valueOf() == "active")){
+		document.getElementById("injury-submit").disabled = false;
+	}
 }
 
 window.onload = init;
@@ -4858,6 +5253,9 @@ var ducks, coyotes, bruins, sabres, flames, hurricanes,
 	devils, islanders, rangers, senators, flyers, 
 	penguins, sharks, kraken, blues, lightning, mapleleafs, 
 	canucks, goldenknights, capitals, jets;
+var ANAgoalies, ARIgoalies, BOSgoalies, BUFgoalies, CGYgoalies, CARgoalies, CHIgoalies, COLgoalies, CBJgoalies, DALgoalies, DETgoalies,
+	EDMgoalies, FLAgoalies, LAgoalies, MINgoalies, MTLgoalies, NSHgoalies, NJgoalies, NYIgoalies, NYRgoalies, OTTgoalies, PHIgoalies,
+	PITgoalies, SJgoalies, SEAgoalies, STLgoalies, TBgoalies, TORgoalies, VANgoalies, VGKgoalies, WSHgoalies, WPGgoalies;
 var team1injuries, team2injuries;
 
 /*PLAYERS ON THE FIRST LINE ARE MOST LIKELY TO SCORE GOALS. 1-5: LINE 1, 6-7: LINE 2, 8: LINE 3, 9: LINE 4, 10: DEFENSE*/
@@ -4869,3 +5267,6 @@ var musicPlaylist;
 var song;
 var songTime;
 var songPicker;
+
+var winningGoalie, losingGoalie;
+var winner, loser;
