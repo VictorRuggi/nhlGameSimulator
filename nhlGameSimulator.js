@@ -139,7 +139,6 @@ function init (){
 	{name: "Elias Lindholm", goals: 0, assists: 0,  state: "active", line: "1"},
 	{name: "Sean Monahan", goals: 0, assists: 0,  state: "active", line: "1"},
 	{name: "Calle Jarnkrok", goals: 0, assists: 0,  state: "active", line: "1"},
-	{name: "Tyler Pitlick", goals: 0, assists: 0,  state: "active", line: "4"},
 	{name: "Brad Richardson", goals: 0, assists: 0,  state: "active", line: "4"},
 	{name: "Adam Ruzicka", goals: 0, assists: 0,  state: "active", line: "4"},
 	{name: "Ryan Carpenter", goals: 0, assists: 0,  state: "active", line: "4"},
@@ -434,6 +433,7 @@ function init (){
 	{name: "Ryan Poehling", goals: 0, assists: 0,  state: "active", line: "3"},
 	{name: "Nick Suzuki", goals: 0, assists: 0,  state: "active", line: "1"},
 	{name: "Lukas Vejdemo", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Tyler Pitlick", goals: 0, assists: 0,  state: "active", line: "4"},
 	{name: "Kale Clague", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Joel Edmundson", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "William Lagesson", goals: 0, assists: 0,  state: "active", line: "D"},
@@ -1193,7 +1193,6 @@ function resetAll(e){
 	{name: "Elias Lindholm", goals: 0, assists: 0,  state: "active", line: "1"},
 	{name: "Sean Monahan", goals: 0, assists: 0,  state: "active", line: "1"},
 	{name: "Calle Jarnkrok", goals: 0, assists: 0,  state: "active", line: "1"},
-	{name: "Tyler Pitlick", goals: 0, assists: 0,  state: "active", line: "4"},
 	{name: "Brad Richardson", goals: 0, assists: 0,  state: "active", line: "4"},
 	{name: "Adam Ruzicka", goals: 0, assists: 0,  state: "active", line: "4"},
 	{name: "Ryan Carpenter", goals: 0, assists: 0,  state: "active", line: "4"},
@@ -1488,6 +1487,7 @@ function resetAll(e){
 	{name: "Ryan Poehling", goals: 0, assists: 0,  state: "active", line: "3"},
 	{name: "Nick Suzuki", goals: 0, assists: 0,  state: "active", line: "1"},
 	{name: "Lukas Vejdemo", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Tyler Pitlick", goals: 0, assists: 0,  state: "active", line: "4"},
 	{name: "Kale Clague", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Joel Edmundson", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "William Lagesson", goals: 0, assists: 0,  state: "active", line: "D"},
@@ -5117,8 +5117,8 @@ function injuryReport(team1, team2){
 	document.getElementById("injury-submit").style.visibility = "visible";
 	
 	document.getElementById("welcome-to-the-game").innerHTML = "<p></p>";
-	document.getElementById("awayTeam").innerHTML = "<p>"+team1[5].toUpperCase()+" "+team1[0].toUpperCase()+"</p>";
-	document.getElementById("homeTeam").innerHTML = "<p>"+team2[5].toUpperCase()+" "+team2[0].toUpperCase()+"</p>";
+	document.getElementById("awayTeam").innerHTML = "<p><b>"+team1[5].toUpperCase()+" "+team1[0].toUpperCase()+"</b></p>";
+	document.getElementById("homeTeam").innerHTML = "<p><b>"+team2[5].toUpperCase()+" "+team2[0].toUpperCase()+"</b></p>";
 	
 	document.getElementById("team1qb1").innerHTML = "<p>Click <b>1</b> to name <b>"+team1[6][0].name+"</b> your starting goalie. &nbsp;&nbsp;</p>";
 	document.getElementById("team1qb2").innerHTML = "<p>Click <b>2</b> to name <b>"+team1[6][1].name+"</b> your starting goalie. &nbsp;&nbsp;</p>";
