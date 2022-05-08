@@ -42,9 +42,10 @@ function init (){
 	{name: "Cam Fowler", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Brendan Guhle", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Jacob Larsson", goals: 0, assists: 0,  state: "active", line: "D"},
-	{name: "Hampus Lindholm", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Josh Mahura", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Greg Pateryn", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "John Moore", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Urho Vaakanainen", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Kevin Shattenkirk", goals: 0, assists: 0,  state: "active", line: "D"}];	
 	
 	coyotes = [ {name: "Loui Eriksson", goals: 0, assists: 0,  state: "active", line: "1"},
@@ -96,10 +97,9 @@ function init (){
 	{name: "Matt Grzelcyk", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Tyler Lewington", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Charlie McAvoy", goals: 0, assists: 0,  state: "active", line: "D"},
-	{name: "John Moore", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Mike Reilly", goals: 0, assists: 0,  state: "active", line: "D"},
-	{name: "Urho Vaakanainen", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Josh Brown", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Hampus Lindholm", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Jakub Zboril", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
 	sabres = [ {name: "Vinnie Hinostroza", goals: 0, assists: 0,  state: "active", line: "1"},
@@ -138,7 +138,7 @@ function init (){
 	{name: "Tyler Toffoli", goals: 0, assists: 0,  state: "active", line: "3"},
 	{name: "Elias Lindholm", goals: 0, assists: 0,  state: "active", line: "1"},
 	{name: "Sean Monahan", goals: 0, assists: 0,  state: "active", line: "1"},
-	{name: "Calle Jarnkrok", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Calle J&auml;rnkrok", goals: 0, assists: 0,  state: "active", line: "1"},
 	{name: "Brad Richardson", goals: 0, assists: 0,  state: "active", line: "4"},
 	{name: "Adam Ruzicka", goals: 0, assists: 0,  state: "active", line: "4"},
 	{name: "Ryan Carpenter", goals: 0, assists: 0,  state: "active", line: "4"},
@@ -418,7 +418,7 @@ function init (){
 	{name: "Alex Belzile", goals: 0, assists: 0,  state: "active", line: "3"},
 	{name: "Cole Caufield", goals: 0, assists: 0,  state: "active", line: "1"},
 	{name: "Brendan Gallagher", goals: 0, assists: 0,  state: "active", line: "1"},
-	{name: "Jesse Ylonen", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Jesse Yl&ouml;nen", goals: 0, assists: 0,  state: "active", line: "4"},
 	{name: "Paul Byron", goals: 0, assists: 0,  state: "active", line: "2"},
 	{name: "Jonathan Drouin", goals: 0, assists: 0,  state: "active", line: "2"},
 	{name: "Rafael Harvey-Pinard", goals: 0, assists: 0,  state: "active", line: "3"},
@@ -1096,9 +1096,10 @@ function resetAll(e){
 	{name: "Cam Fowler", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Brendan Guhle", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Jacob Larsson", goals: 0, assists: 0,  state: "active", line: "D"},
-	{name: "Hampus Lindholm", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Josh Mahura", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Greg Pateryn", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "John Moore", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Urho Vaakanainen", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Kevin Shattenkirk", goals: 0, assists: 0,  state: "active", line: "D"}];	
 	
 	coyotes = [ {name: "Loui Eriksson", goals: 0, assists: 0,  state: "active", line: "1"},
@@ -1150,10 +1151,9 @@ function resetAll(e){
 	{name: "Matt Grzelcyk", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Tyler Lewington", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Charlie McAvoy", goals: 0, assists: 0,  state: "active", line: "D"},
-	{name: "John Moore", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Mike Reilly", goals: 0, assists: 0,  state: "active", line: "D"},
-	{name: "Urho Vaakanainen", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Josh Brown", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Hampus Lindholm", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Jakub Zboril", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
 	sabres = [ {name: "Vinnie Hinostroza", goals: 0, assists: 0,  state: "active", line: "1"},
@@ -1192,7 +1192,7 @@ function resetAll(e){
 	{name: "Tyler Toffoli", goals: 0, assists: 0,  state: "active", line: "3"},
 	{name: "Elias Lindholm", goals: 0, assists: 0,  state: "active", line: "1"},
 	{name: "Sean Monahan", goals: 0, assists: 0,  state: "active", line: "1"},
-	{name: "Calle Jarnkrok", goals: 0, assists: 0,  state: "active", line: "1"},
+	{name: "Calle J&auml;rnkrok", goals: 0, assists: 0,  state: "active", line: "1"},
 	{name: "Brad Richardson", goals: 0, assists: 0,  state: "active", line: "4"},
 	{name: "Adam Ruzicka", goals: 0, assists: 0,  state: "active", line: "4"},
 	{name: "Ryan Carpenter", goals: 0, assists: 0,  state: "active", line: "4"},
@@ -1472,7 +1472,7 @@ function resetAll(e){
 	{name: "Alex Belzile", goals: 0, assists: 0,  state: "active", line: "3"},
 	{name: "Cole Caufield", goals: 0, assists: 0,  state: "active", line: "1"},
 	{name: "Brendan Gallagher", goals: 0, assists: 0,  state: "active", line: "1"},
-	{name: "Jesse Ylonen", goals: 0, assists: 0,  state: "active", line: "4"},
+	{name: "Jesse Yl&ouml;nen", goals: 0, assists: 0,  state: "active", line: "4"},
 	{name: "Paul Byron", goals: 0, assists: 0,  state: "active", line: "2"},
 	{name: "Jonathan Drouin", goals: 0, assists: 0,  state: "active", line: "2"},
 	{name: "Rafael Harvey-Pinard", goals: 0, assists: 0,  state: "active", line: "3"},
@@ -2732,7 +2732,7 @@ function firstPeriod(team1, team2)
 {	
 	document.getElementById("simulation").innerHTML += "<p><b><span style=\"color: dodgerblue\">GOALS WITHIN REGULATION AND/OR OVERTIME</span></b><br/><b>FIRST PERIOD</b></p>";
 
-		for (var i = 0; i <= Math.floor(Math.random() * 7 + 1); i++)
+		for (var i = 0; i <= Math.floor(Math.random() * 9 + 1); i++)
 		{
 			var away = 0;
 			var home = 0;
@@ -2824,31 +2824,31 @@ function firstPeriod(team1, team2)
 						break;
 					}
 					case 14:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 15:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 16:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 17:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 18:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "4"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "3"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
@@ -3058,31 +3058,31 @@ function firstPeriod(team1, team2)
 						break;
 					}
 					case 14:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 15:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 16:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 17:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 18:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "4"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "3"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
@@ -3220,7 +3220,7 @@ function secondPeriod(team1, team2)
 {
 	document.getElementById("simulation").innerHTML += "<p><br/><b>SECOND PERIOD</b></p>";
 	
-	for (var i = 0; i <= Math.floor(Math.random() * 7 + 1); i++)
+	for (var i = 0; i <= Math.floor(Math.random() * 9 + 1); i++)
 		{
 			var away = 0;
 			var home = 0;
@@ -3312,31 +3312,31 @@ function secondPeriod(team1, team2)
 						break;
 					}
 					case 14:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 15:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 16:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 17:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 18:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "4"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "3"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
@@ -3547,31 +3547,31 @@ function secondPeriod(team1, team2)
 						break;
 					}
 					case 14:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 15:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 16:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 17:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 18:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "4"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "3"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
@@ -3709,7 +3709,7 @@ function thirdPeriod(team1, team2)
 {
 	document.getElementById("simulation").innerHTML += "<p><br/><b>THIRD PERIOD</b></p>";
 
-	for (var i = 0; i <= Math.floor(Math.random() * 7 + 1); i++)
+	for (var i = 0; i <= Math.floor(Math.random() * 9 + 1); i++)
 		{
 			var away = 0;
 			var home = 0;
@@ -3801,31 +3801,31 @@ function thirdPeriod(team1, team2)
 						break;
 					}
 					case 14:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 15:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 16:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 17:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 18:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "4"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "3"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
@@ -4036,31 +4036,31 @@ function thirdPeriod(team1, team2)
 						break;
 					}
 					case 14:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 15:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 16:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 17:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 18:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "4"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "3"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
@@ -4377,31 +4377,31 @@ function overtime(team1, team2)
 						break;
 					}
 					case 14:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 15:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 16:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 17:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 18:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "4"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "3"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
@@ -4687,31 +4687,31 @@ function overtime(team1, team2)
 						break;
 					}
 					case 14:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 15:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 16:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 17:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 18:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "4"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "3"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
