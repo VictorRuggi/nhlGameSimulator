@@ -9,6 +9,17 @@ function addEvent (obj, type, fn)
 }
 
 function init (){
+	away1count=0;
+	away2count=0;
+	away3count=0;
+	away4count=0;
+	awayDcount=0;
+	home1count=0;
+	home2count=0;
+	home3count=0;
+	home4count=0;
+	homeDcount=0;
+	
 	teamButtons = [ document.getElementById("ducks"), document.getElementById("coyotes"), document.getElementById("bruins"), document.getElementById("sabres"), 
 					document.getElementById("flames"), document.getElementById("hurricanes"), document.getElementById("blackhawks"), document.getElementById("avalanche"), 
 					document.getElementById("bluejackets"), document.getElementById("stars"), document.getElementById("redwings"), document.getElementById("oilers"),
@@ -1050,6 +1061,18 @@ function resetAll(e){
 	var evt = e || window.event;
 	var t = evt.target || evt.srcElement;
 	
+	//RESET THE LINE COUNT
+	away1count=0;
+	away2count=0;
+	away3count=0;
+	away4count=0;
+	awayDcount=0;
+	home1count=0;
+	home2count=0;
+	home3count=0;
+	home4count=0;
+	homeDcount=0;
+	
 	document.getElementById("reset-btn").disabled = true;
 	
 	//HIDE THE BOX SCORE
@@ -1065,7 +1088,7 @@ function resetAll(e){
 	}
 	
 	//RESET THE INJURY REPORT
-	document.getElementById("injury-report").innerHTML = "<p>Indicate which players will not be playing in this game. Left side is the away team, right side is the home team. Please put one player per line. Apostrophes: &amp;#39;</p><textarea id=\"team1\" name=\"team1\"></textarea><textarea id=\"team2\" name=\"team2\"></textarea><p id=\"welcome-to-the-game\" style=\"visibility: hidden\"></p><div id=\"awayNHLTeam\" style=\"visibility: hidden\"><p id=\"awayTeam\"></p><p id=\"team1qb1\"></p><input type=\"button\" id=\"awayqb1\" value=\" 1 \" disabled=\"true\"/><p id=\"team1qb2\"></p><input type=\"button\" id=\"awayqb2\" value=\" 2 \" disabled=\"true\"/></div><div id=\"homeNHLTeam\" style=\"visibility: hidden\"><p id=\"homeTeam\"></p><p id=\"team2qb1\"></p><input type=\"button\" id=\"homeqb1\" value=\" 1 \" disabled=\"true\"/><p id=\"team2qb2\"></p><input type=\"button\" id=\"homeqb2\" value=\" 2 \" disabled=\"true\"/></div><input id=\"injury-submit\" type=\"button\" value=\"Submit\" />";
+	//document.getElementById("injury-report").innerHTML = "<p>Indicate which players will not be playing in this game. Left side is the away team, right side is the home team. Please put one player per line. Apostrophes: &amp;#39;</p><textarea id=\"team1\" name=\"team1\"></textarea><textarea id=\"team2\" name=\"team2\"></textarea><p id=\"welcome-to-the-game\" style=\"visibility: hidden\"></p><div id=\"awayNHLTeam\" style=\"visibility: hidden\"><p id=\"awayTeam\"></p><p id=\"team1qb1\"></p><input type=\"button\" id=\"awayqb1\" value=\" 1 \" disabled=\"true\"/><p id=\"team1qb2\"></p><input type=\"button\" id=\"awayqb2\" value=\" 2 \" disabled=\"true\"/></div><div id=\"homeNHLTeam\" style=\"visibility: hidden\"><p id=\"homeTeam\"></p><p id=\"team2qb1\"></p><input type=\"button\" id=\"homeqb1\" value=\" 1 \" disabled=\"true\"/><p id=\"team2qb2\"></p><input type=\"button\" id=\"homeqb2\" value=\" 2 \" disabled=\"true\"/></div><input id=\"injury-submit\" type=\"button\" value=\"Submit\" />";
 	document.getElementById("injury-submit").disabled = true;
 	
 	//CLEAR ALL VALUES
@@ -2732,7 +2755,7 @@ function firstPeriod(team1, team2)
 {	
 	document.getElementById("simulation").innerHTML += "<p><b><span style=\"color: dodgerblue\">GOALS WITHIN REGULATION AND/OR OVERTIME</span></b><br/><b>FIRST PERIOD</b></p>";
 
-		for (var i = 0; i <= Math.floor(Math.random() * 9 + 1); i++)
+		for (var i = 0; i <= Math.floor(Math.random() * 13 + 1); i++)
 		{
 			var away = 0;
 			var home = 0;
@@ -2836,19 +2859,19 @@ function firstPeriod(team1, team2)
 						break;
 					}
 					case 16:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 17:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "1" || !team1[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 18:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "2" || !team1[2][randomPlayerIndex].line.valueOf() == "3"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
@@ -3070,19 +3093,19 @@ function firstPeriod(team1, team2)
 						break;
 					}
 					case 16:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 17:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "1" || !team2[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 18:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "2" || !team2[2][randomPlayerIndex].line.valueOf() == "3"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
@@ -3220,7 +3243,7 @@ function secondPeriod(team1, team2)
 {
 	document.getElementById("simulation").innerHTML += "<p><br/><b>SECOND PERIOD</b></p>";
 	
-	for (var i = 0; i <= Math.floor(Math.random() * 9 + 1); i++)
+	for (var i = 0; i <= Math.floor(Math.random() * 13 + 1); i++)
 		{
 			var away = 0;
 			var home = 0;
@@ -3324,19 +3347,19 @@ function secondPeriod(team1, team2)
 						break;
 					}
 					case 16:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 17:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "1" || !team1[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 18:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "2" || !team1[2][randomPlayerIndex].line.valueOf() == "3"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
@@ -3559,19 +3582,19 @@ function secondPeriod(team1, team2)
 						break;
 					}
 					case 16:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 17:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "1" || !team2[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 18:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "2" || !team2[2][randomPlayerIndex].line.valueOf() == "3"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
@@ -3709,7 +3732,7 @@ function thirdPeriod(team1, team2)
 {
 	document.getElementById("simulation").innerHTML += "<p><br/><b>THIRD PERIOD</b></p>";
 
-	for (var i = 0; i <= Math.floor(Math.random() * 9 + 1); i++)
+	for (var i = 0; i <= Math.floor(Math.random() * 13 + 1); i++)
 		{
 			var away = 0;
 			var home = 0;
@@ -3813,19 +3836,19 @@ function thirdPeriod(team1, team2)
 						break;
 					}
 					case 16:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 17:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "1" || !team1[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 18:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "2" || !team1[2][randomPlayerIndex].line.valueOf() == "3"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
@@ -4048,19 +4071,19 @@ function thirdPeriod(team1, team2)
 						break;
 					}
 					case 16:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 17:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "1" || !team2[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 18:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "2" || !team2[2][randomPlayerIndex].line.valueOf() == "3"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
@@ -4198,9 +4221,9 @@ function thirdPeriod(team1, team2)
 		else
 		{
 			document.getElementById("header-text").innerHTML = "<p>Projected Result</p>";
-			document.getElementById("header-text").innerHTML += "<p>Non-participating players</p>";
-			document.getElementById("header-text").innerHTML += "<p><b>"+team1[0].toUpperCase()+"</b></p>";
-			if(team1injuries.length > 0) {
+			/*document.getElementById("header-text").innerHTML += "<p>Non-participating players</p>";*/
+			/*document.getElementById("header-text").innerHTML += "<p><b>"+team1[0].toUpperCase()+"</b></p>";*/
+			/*if(team1injuries.length > 0) {
 				document.getElementById("header-text").innerHTML += "<p>";
 				for(var i=0; i<team1injuries.length; i++){
 					document.getElementById("header-text").innerHTML += team1injuries[i]+"&nbsp;&nbsp;&nbsp;";
@@ -4209,9 +4232,9 @@ function thirdPeriod(team1, team2)
 			}
 			else {
 				document.getElementById("header-text").innerHTML += "<p>NONE</p>";
-			}
+			}*/
 			
-			document.getElementById("header-text").innerHTML += "<p><b>"+team2[0].toUpperCase()+"</b></p>";
+			/*document.getElementById("header-text").innerHTML += "<p><b>"+team2[0].toUpperCase()+"</b></p>";
 			if(team2injuries.length > 0) {
 				document.getElementById("header-text").innerHTML += "<p>";
 				for(var i=0; i<team2injuries.length; i++){
@@ -4221,7 +4244,7 @@ function thirdPeriod(team1, team2)
 			}
 			else {
 				document.getElementById("header-text").innerHTML += "<p>NONE</p>";
-			}
+			}*/
 			
 			document.getElementById("header-text").innerHTML += "<ul><li>" + "<img src=\"" + team1[3] + "\"></img>" + "</li><li>" + team1[0].toUpperCase() + "<h1 style=\"font-family: Gotham Black\"> " + team1[1] + "</h1></li>" + 
 															"<li>" + team2[0].toUpperCase() + "<h1 style=\"font-family: Gotham Black\"> " + team2[1] + "</h1></li><li><img src=\"" + team2[3] + "\"></img>" + "</li></ul></div>";
@@ -4276,7 +4299,7 @@ function thirdPeriod(team1, team2)
 				winner = team2[4];
 				loser = team1[4];
 			}
-			document.getElementById("box-score").innerHTML += "<br/><p><b>WINNING GOALIE</b>&nbsp;"+winningGoalie+" ("+winner+")&nbsp;&nbsp;&nbsp;&nbsp;<b>LOSING GOALIE</b>&nbsp;"+losingGoalie+" ("+loser+")</p>";
+			document.getElementById("box-score").innerHTML += "<br/><p><b>WINNING GOALIE</b>&nbsp;"+winningGoalie+" ("+winner+")<br/><b>LOSING GOALIE</b>&nbsp;"+losingGoalie+" ("+loser+")</p>";
 			
 			document.getElementById("reset-btn").disabled = false;
 		}
@@ -4389,19 +4412,19 @@ function overtime(team1, team2)
 						break;
 					}
 					case 16:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 17:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "1" || !team1[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
 					}
 					case 18:{
-						while(!team1[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "2" || !team1[2][randomPlayerIndex].line.valueOf() == "3"){
 							randomPlayerIndex = Math.floor(Math.random() * team1[2].length);
 						}
 						break;
@@ -4521,9 +4544,9 @@ function overtime(team1, team2)
 					}
 				}
 			document.getElementById("header-text").innerHTML = "<p>Projected Result (OT)</p>";
-			document.getElementById("header-text").innerHTML += "<p>Non-participating players</p>";
-			document.getElementById("header-text").innerHTML += "<p><b>"+team1[0].toUpperCase()+"</b></p>";
-			if(team1injuries.length > 0) {
+			/*document.getElementById("header-text").innerHTML += "<p>Non-participating players</p>";
+			document.getElementById("header-text").innerHTML += "<p><b>"+team1[0].toUpperCase()+"</b></p>";*/
+			/*if(team1injuries.length > 0) {
 				document.getElementById("header-text").innerHTML += "<p>";
 				for(var i=0; i<team1injuries.length; i++){
 					document.getElementById("header-text").innerHTML += team1injuries[i]+"&nbsp;&nbsp;&nbsp;";
@@ -4532,9 +4555,9 @@ function overtime(team1, team2)
 			}
 			else {
 				document.getElementById("header-text").innerHTML += "<p>NONE</p>";
-			}
+			}*/
 			
-			document.getElementById("header-text").innerHTML += "<p><b>"+team2[0].toUpperCase()+"</b></p>";
+			/*document.getElementById("header-text").innerHTML += "<p><b>"+team2[0].toUpperCase()+"</b></p>";
 			if(team2injuries.length > 0) {
 				document.getElementById("header-text").innerHTML += "<p>";
 				for(var i=0; i<team2injuries.length; i++){
@@ -4544,7 +4567,7 @@ function overtime(team1, team2)
 			}
 			else {
 				document.getElementById("header-text").innerHTML += "<p>NONE</p>";
-			}
+			}*/
 			
 			document.getElementById("header-text").innerHTML += "<ul><li>" + "<img src=\"" + team1[3] + "\"></img>" + "</li><li>" + team1[0].toUpperCase() + "<h1 style=\"font-family: Gotham Black\"> " + team1[1] + "</h1></li>" + 
 															"<li>" + team2[0].toUpperCase() + "<h1 style=\"font-family: Gotham Black\"> " + team2[1] + "</h1></li><li><img src=\"" + team2[3] + "\"></img>" + "</li></ul></div>";
@@ -4598,7 +4621,7 @@ function overtime(team1, team2)
 				winner = team2[4];
 				loser = team1[4];
 			}
-			document.getElementById("box-score").innerHTML += "<br/><p><b>WINNING GOALIE</b>&nbsp;"+winningGoalie+" ("+winner+")&nbsp;&nbsp;&nbsp;&nbsp;<b>LOSING GOALIE</b>&nbsp;"+losingGoalie+" ("+loser+")</p>";
+			document.getElementById("box-score").innerHTML += "<br/><p><b>WINNING GOALIE</b>&nbsp;"+winningGoalie+" ("+winner+")<br/><b>LOSING GOALIE</b>&nbsp;"+losingGoalie+" ("+loser+")</p>";
 			
 			document.getElementById("reset-btn").disabled = false;
 	}
@@ -4699,19 +4722,19 @@ function overtime(team1, team2)
 						break;
 					}
 					case 16:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team2[2][randomPlayerIndex].line.valueOf() == "1"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 17:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "2"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "1" || !team2[2][randomPlayerIndex].line.valueOf() == "2"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
 					}
 					case 18:{
-						while(!team2[2][randomPlayerIndex].line.valueOf() == "3"){
+						while(!team1[2][randomPlayerIndex].line.valueOf() == "2" || !team2[2][randomPlayerIndex].line.valueOf() == "3"){
 							randomPlayerIndex = Math.floor(Math.random() * team2[2].length);
 						}
 						break;
@@ -4835,9 +4858,9 @@ function overtime(team1, team2)
 					}
 				}
 			document.getElementById("header-text").innerHTML = "<p>Projected Result (OT)</p>";
-			document.getElementById("header-text").innerHTML += "<p>Non-participating players</p>";
-			document.getElementById("header-text").innerHTML += "<p><b>"+team1[0].toUpperCase()+"</b></p>";
-			if(team1injuries.length > 0) {
+			/*document.getElementById("header-text").innerHTML += "<p>Non-participating players</p>";
+			document.getElementById("header-text").innerHTML += "<p><b>"+team1[0].toUpperCase()+"</b></p>";*/
+			/*if(team1injuries.length > 0) {
 				document.getElementById("header-text").innerHTML += "<p>";
 				for(var i=0; i<team1injuries.length; i++){
 					document.getElementById("header-text").innerHTML += team1injuries[i]+"&nbsp;&nbsp;&nbsp;";
@@ -4846,9 +4869,9 @@ function overtime(team1, team2)
 			}
 			else {
 				document.getElementById("header-text").innerHTML += "<p>NONE</p>";
-			}
+			}*/
 			
-			document.getElementById("header-text").innerHTML += "<p><b>"+team2[0].toUpperCase()+"</b></p>";
+			/*document.getElementById("header-text").innerHTML += "<p><b>"+team2[0].toUpperCase()+"</b></p>";
 			if(team2injuries.length > 0) {
 				document.getElementById("header-text").innerHTML += "<p>";
 				for(var i=0; i<team2injuries.length; i++){
@@ -4858,7 +4881,7 @@ function overtime(team1, team2)
 			}
 			else {
 				document.getElementById("header-text").innerHTML += "<p>NONE</p>";
-			}
+			}*/
 			
 			document.getElementById("header-text").innerHTML += "<ul><li>" + "<img src=\"" + team1[3] + "\"></img>" + "</li><li>" + team1[0].toUpperCase() + "<h1 style=\"font-family: Gotham Black\"> " + team1[1] + "</h1></li>" + 
 															"<li>" + team2[0].toUpperCase() + "<h1 style=\"font-family: Gotham Black\"> " + team2[1] + "</h1></li><li><img src=\"" + team2[3] + "\"></img>" + "</li></ul></div>";
@@ -4912,7 +4935,7 @@ function overtime(team1, team2)
 				winner = team2[4];
 				loser = team1[4];
 			}
-			document.getElementById("box-score").innerHTML += "<br/><p><b>WINNING GOALIE</b>&nbsp;"+winningGoalie+" ("+winner+")&nbsp;&nbsp;&nbsp;&nbsp;<b>LOSING GOALIE</b>&nbsp;"+losingGoalie+" ("+loser+")</p>";
+			document.getElementById("box-score").innerHTML += "<br/><p><b>WINNING GOALIE</b>&nbsp;"+winningGoalie+" ("+winner+")<br/><b>LOSING GOALIE</b>&nbsp;"+losingGoalie+" ("+loser+")</p>";
 			
 			document.getElementById("reset-btn").disabled = false;
 	}
@@ -4929,7 +4952,7 @@ function shootout(team1, team2)
 		team1[1]++;
 		document.getElementById("simulation").innerHTML += "<p>"+team1[4]+" wins the shootout</p>";
 		document.getElementById("header-text").innerHTML = "<p>Projected Result (Shootout)</p>";
-			document.getElementById("header-text").innerHTML += "<p>Non-participating players</p>";
+			/*document.getElementById("header-text").innerHTML += "<p>Non-participating players</p>";
 			document.getElementById("header-text").innerHTML += "<p><b>"+team1[0].toUpperCase()+"</b></p>";
 			if(team1injuries.length > 0) {
 				document.getElementById("header-text").innerHTML += "<p>";
@@ -4940,9 +4963,9 @@ function shootout(team1, team2)
 			}
 			else {
 				document.getElementById("header-text").innerHTML += "<p>NONE</p>";
-			}
+			}*/
 			
-			document.getElementById("header-text").innerHTML += "<p><b>"+team2[0].toUpperCase()+"</b></p>";
+			/*document.getElementById("header-text").innerHTML += "<p><b>"+team2[0].toUpperCase()+"</b></p>";
 			if(team2injuries.length > 0) {
 				document.getElementById("header-text").innerHTML += "<p>";
 				for(var i=0; i<team2injuries.length; i++){
@@ -4952,7 +4975,7 @@ function shootout(team1, team2)
 			}
 			else {
 				document.getElementById("header-text").innerHTML += "<p>NONE</p>";
-			}
+			}*/
 			
 			document.getElementById("header-text").innerHTML += "<ul><li>" + "<img src=\"" + team1[3] + "\"></img>" + "</li><li>" + team1[0].toUpperCase() + "<h1 style=\"font-family: Gotham Black\"> " + team1[1] + "</h1></li>" + 
 															"<li>" + team2[0].toUpperCase() + "<h1 style=\"font-family: Gotham Black\"> " + team2[1] + "</h1></li><li><img src=\"" + team2[3] + "\"></img>" + "</li></ul></div>";
@@ -5006,7 +5029,7 @@ function shootout(team1, team2)
 				winner = team2[4];
 				loser = team1[4];
 			}
-			document.getElementById("box-score").innerHTML += "<br/><p><b>WINNING GOALIE</b>&nbsp;"+winningGoalie+" ("+winner+")&nbsp;&nbsp;&nbsp;&nbsp;<b>LOSING GOALIE</b>&nbsp;"+losingGoalie+" ("+loser+")</p>";
+			document.getElementById("box-score").innerHTML += "<br/><p><b>WINNING GOALIE</b>&nbsp;"+winningGoalie+" ("+winner+")<br/><b>LOSING GOALIE</b>&nbsp;"+losingGoalie+" ("+loser+")</p>";
 			
 			document.getElementById("reset-btn").disabled = false;
 	}
@@ -5015,7 +5038,7 @@ function shootout(team1, team2)
 		team2[1]++;
 		document.getElementById("simulation").innerHTML += "<p>"+team2[4]+" wins the shootout</p>";
 		document.getElementById("header-text").innerHTML = "<p>Projected Result (Shootout)</p>";
-			document.getElementById("header-text").innerHTML += "<p>Non-participating players</p>";
+			/*document.getElementById("header-text").innerHTML += "<p>Non-participating players</p>";
 			document.getElementById("header-text").innerHTML += "<p><b>"+team1[0].toUpperCase()+"</b></p>";
 			if(team1injuries.length > 0) {
 				document.getElementById("header-text").innerHTML += "<p>";
@@ -5026,9 +5049,9 @@ function shootout(team1, team2)
 			}
 			else {
 				document.getElementById("header-text").innerHTML += "<p>NONE</p>";
-			}
+			}*/
 			
-			document.getElementById("header-text").innerHTML += "<p><b>"+team2[0].toUpperCase()+"</b></p>";
+			/*document.getElementById("header-text").innerHTML += "<p><b>"+team2[0].toUpperCase()+"</b></p>";
 			if(team2injuries.length > 0) {
 				document.getElementById("header-text").innerHTML += "<p>";
 				for(var i=0; i<team2injuries.length; i++){
@@ -5038,7 +5061,7 @@ function shootout(team1, team2)
 			}
 			else {
 				document.getElementById("header-text").innerHTML += "<p>NONE</p>";
-			}
+			}*/
 			
 			document.getElementById("header-text").innerHTML += "<ul><li>" + "<img src=\"" + team1[3] + "\"></img>" + "</li><li>" + team1[0].toUpperCase() + "<h1 style=\"font-family: Gotham Black\"> " + team1[1] + "</h1></li>" + 
 															"<li>" + team2[0].toUpperCase() + "<h1 style=\"font-family: Gotham Black\"> " + team2[1] + "</h1></li><li><img src=\"" + team2[3] + "\"></img>" + "</li></ul></div>";
@@ -5092,7 +5115,7 @@ function shootout(team1, team2)
 				winner = team2[4];
 				loser = team1[4];
 			}
-			document.getElementById("box-score").innerHTML += "<br/><p><b>WINNING GOALIE</b>&nbsp;"+winningGoalie+" ("+winner+")&nbsp;&nbsp;&nbsp;&nbsp;<b>LOSING GOALIE</b>&nbsp;"+losingGoalie+" ("+loser+")</p>";
+			document.getElementById("box-score").innerHTML += "<br/><p><b>WINNING GOALIE</b>&nbsp;"+winningGoalie+" ("+winner+")<br/><b>LOSING GOALIE</b>&nbsp;"+losingGoalie+" ("+loser+")</p>";
 			
 			document.getElementById("reset-btn").disabled = false;
 	}
@@ -5108,8 +5131,8 @@ function resume2(){
 
 function injuryReport(team1, team2){
 	document.getElementById("injury-report").style.visibility = "visible";
-	document.getElementById("team1").placeholder = "Away team: " + team1[0].toUpperCase();
-	document.getElementById("team2").placeholder = "Home team: " + team2[0].toUpperCase();
+	/*document.getElementById("team1").placeholder = "Away team: " + team1[0].toUpperCase();
+	document.getElementById("team2").placeholder = "Home team: " + team2[0].toUpperCase();*/
 	
 	document.getElementById("welcome-to-the-game").style.visibility = "visible";
 	document.getElementById("awayNHLTeam").style.visibility = "visible";
@@ -5142,7 +5165,7 @@ function injurySubmit(e){
 	var evt = e || window.event;
 	var t = evt.target || evt.srcElement;
 	
-	if(document.getElementById("team1").value.valueOf() == ""){
+	/*if(document.getElementById("team1").value.valueOf() == ""){
 		team1injuries = [];
 	}
 	else {
@@ -5170,7 +5193,180 @@ function injurySubmit(e){
 				team2[2].splice(j, 1);
 			}
 		}
+	}*/
+	
+	/*ALL TEAMS HAVE 12 FORWARDS AND 6 DEFENSEMEN ON THE ICE*/
+	for(var i=0; i<team1[2].length; i++){
+		if(team1[2][i].line.valueOf() == "1"){
+			away1count++;
+		}
 	}
+	while(away1count > 3){
+		var finder = Math.floor(Math.random() * team1[2].length);
+		
+		if(team1[2][finder].line.valueOf() == "1"){
+			team1[2][finder].state = "out";
+			team1[2].splice(finder, 1);
+			away1count--;
+		}
+		else{
+			//NONE
+		}
+	}
+	for(var i=0; i<team1[2].length; i++){
+		if(team1[2][i].line.valueOf() == "2"){
+			away2count++;
+		}
+	}
+	while(away2count > 3){
+		var finder = Math.floor(Math.random() * team1[2].length);
+		
+		if(team1[2][finder].line.valueOf() == "2"){
+			team1[2][finder].state = "out";
+			team1[2].splice(finder, 1);
+			away2count--;
+		}
+		else{
+			//NONE
+		}
+	}
+	for(var i=0; i<team1[2].length; i++){
+		if(team1[2][i].line.valueOf() == "3"){
+			away3count++;
+		}
+	}
+	while(away3count > 3){
+		var finder = Math.floor(Math.random() * team1[2].length);
+		
+		if(team1[2][finder].line.valueOf() == "3"){
+			team1[2][finder].state = "out";
+			team1[2].splice(finder, 1);
+			away3count--;
+		}
+		else{
+			//NONE
+		}
+	}
+	for(var i=0; i<team1[2].length; i++){
+		if(team1[2][i].line.valueOf() == "4"){
+			away4count++;
+		}
+	}
+	while(away4count > 3){
+		var finder = Math.floor(Math.random() * team1[2].length);
+		
+		if(team1[2][finder].line.valueOf() == "4"){
+			team1[2][finder].state = "out";
+			team1[2].splice(finder, 1);
+			away4count--;
+		}
+		else{
+			//NONE
+		}
+	}
+	for(var i=0; i<team1[2].length; i++){
+		if(team1[2][i].line.valueOf() == "D"){
+			awayDcount++;
+		}
+	}
+	while(awayDcount > 6){
+		var finder = Math.floor(Math.random() * team1[2].length);
+		
+		if(team1[2][finder].line.valueOf() == "D"){
+			team1[2][finder].state = "out";
+			team1[2].splice(finder, 1);
+			awayDcount--;
+		}
+		else{
+			//NONE
+		}
+	}
+	for(var i=0; i<team2[2].length; i++){
+		if(team2[2][i].line.valueOf() == "1"){
+			home1count++;
+		}
+	}
+	while(home1count > 3){
+		var finder = Math.floor(Math.random() * team2[2].length);
+		
+		if(team2[2][finder].line.valueOf() == "1"){
+			team2[2][finder].state = "out";
+			team2[2].splice(finder, 1);
+			home1count--;
+		}
+		else{
+			//NONE
+		}
+	}
+	for(var i=0; i<team2[2].length; i++){
+		if(team2[2][i].line.valueOf() == "2"){
+			home2count++;
+		}
+	}
+	while(home2count > 3){
+		var finder = Math.floor(Math.random() * team2[2].length);
+		
+		if(team2[2][finder].line.valueOf() == "2"){
+			team2[2][finder].state = "out";
+			team2[2].splice(finder, 1);
+			home2count--;
+		}
+		else{
+			//NONE
+		}
+	}
+	for(var i=0; i<team2[2].length; i++){
+		if(team2[2][i].line.valueOf() == "3"){
+			home3count++;
+		}
+	}
+	while(home3count > 3){
+		var finder = Math.floor(Math.random() * team2[2].length);
+		
+		if(team2[2][finder].line.valueOf() == "3"){
+			team2[2][finder].state = "out";
+			team2[2].splice(finder, 1);
+			home3count--;
+		}
+		else{
+			//NONE
+		}
+	}
+	for(var i=0; i<team2[2].length; i++){
+		if(team2[2][i].line.valueOf() == "4"){
+			home4count++;
+		}
+	}
+	while(home4count > 3){
+		var finder = Math.floor(Math.random() * team2[2].length);
+		
+		if(team2[2][finder].line.valueOf() == "4"){
+			team2[2][finder].state = "out";
+			team2[2].splice(finder, 1);
+			home4count--;
+		}
+		else{
+			//NONE
+		}
+	}
+	for(var i=0; i<team2[2].length; i++){
+		if(team2[2][i].line.valueOf() == "D"){
+			homeDcount++;
+		}
+	}
+	while(homeDcount > 6){
+		var finder = Math.floor(Math.random() * team2[2].length);
+		
+		if(team2[2][finder].line.valueOf() == "D"){
+			team2[2][finder].state = "out";
+			team2[2].splice(finder, 1);
+			homeDcount--;
+		}
+		else{
+			//NONE
+		}
+	}
+
 	
 	document.getElementById("injury-report").style.visibility = "hidden";
 	document.getElementById("welcome-to-the-game").style.visibility = "hidden";
@@ -5260,6 +5456,10 @@ var team1injuries, team2injuries;
 
 /*PLAYERS ON THE FIRST LINE ARE MOST LIKELY TO SCORE GOALS. 1-5: LINE 1, 6-7: LINE 2, 8: LINE 3, 9: LINE 4, 10: DEFENSE*/
 var random1to20;
+
+/*LINE COUNT*/
+var away1count, away2count, away3count, away4count;
+var home1count, home2count, home3count, home4count;
 
 /*MUSIC PLAYLIST*/
 var bgMusic;
