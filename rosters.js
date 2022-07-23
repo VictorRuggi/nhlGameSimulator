@@ -22,9 +22,10 @@ function init(){
 	{name: "Cam Fowler", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Brendan Guhle", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Jacob Larsson", goals: 0, assists: 0,  state: "active", line: "D"},
-	{name: "Hampus Lindholm", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Josh Mahura", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Greg Pateryn", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "John Moore", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Urho Vaakanainen", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Kevin Shattenkirk", goals: 0, assists: 0,  state: "active", line: "D"}];	
 	
 	coyotes = [ {name: "Loui Eriksson", goals: 0, assists: 0,  state: "active", line: "1"},
@@ -76,10 +77,9 @@ function init(){
 	{name: "Matt Grzelcyk", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Tyler Lewington", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Charlie McAvoy", goals: 0, assists: 0,  state: "active", line: "D"},
-	{name: "John Moore", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Mike Reilly", goals: 0, assists: 0,  state: "active", line: "D"},
-	{name: "Urho Vaakanainen", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Josh Brown", goals: 0, assists: 0,  state: "active", line: "D"},
+	{name: "Hampus Lindholm", goals: 0, assists: 0,  state: "active", line: "D"},
 	{name: "Jakub Zboril", goals: 0, assists: 0,  state: "active", line: "D"}];
 			
 	sabres = [ {name: "Vinnie Hinostroza", goals: 0, assists: 0,  state: "active", line: "1"},
@@ -848,100 +848,100 @@ function init(){
 	{name: "Logan Stanley", goals: 0, assists: 0,  state: "active", line: "D"}];
 	
 	for(var i=0; i<ducks.length; i++){
-		document.getElementById("ducks").innerHTML += "<p>"+ducks[i].name+"</p>";
+		document.getElementById("ducks").innerHTML += "<p>"+ducks[i].name+"&emsp;&emsp;&emsp;Line "+ducks[i].line+"</p>";
 	}
 	for(var i=0; i<coyotes.length; i++){
-		document.getElementById("coyotes").innerHTML += "<p>"+coyotes[i].name+"</p>";
+		document.getElementById("coyotes").innerHTML += "<p>"+coyotes[i].name+"&emsp;&emsp;&emsp;Line "+coyotes[i].line+"</p>";
 	}
 	for(var i=0; i<bruins.length; i++){
-		document.getElementById("bruins").innerHTML += "<p>"+bruins[i].name+"</p>";
+		document.getElementById("bruins").innerHTML += "<p>"+bruins[i].name+"&emsp;&emsp;&emsp;Line "+bruins[i].line+"</p>";
 	}
 	for(var i=0; i<sabres.length; i++){
-		document.getElementById("sabres").innerHTML += "<p>"+sabres[i].name+"</p>";
+		document.getElementById("sabres").innerHTML += "<p>"+sabres[i].name+"&emsp;&emsp;&emsp;Line "+sabres[i].line+"</p>";
 	}
 	for(var i=0; i<flames.length; i++){
-		document.getElementById("flames").innerHTML += "<p>"+flames[i].name+"</p>";
+		document.getElementById("flames").innerHTML += "<p>"+flames[i].name+"&emsp;&emsp;&emsp;Line "+flyers[i].line+"</p>";
 	}
 	for(var i=0; i<hurricanes.length; i++){
-		document.getElementById("hurricanes").innerHTML += "<p>"+hurricanes[i].name+"</p>";
+		document.getElementById("hurricanes").innerHTML += "<p>"+hurricanes[i].name+"&emsp;&emsp;&emsp;Line "+hurricanes[i].line+"</p>";
 	}
 	for(var i=0; i<blackhawks.length; i++){
-		document.getElementById("blackhawks").innerHTML += "<p>"+blackhawks[i].name+"</p>";
+		document.getElementById("blackhawks").innerHTML += "<p>"+blackhawks[i].name+"&emsp;&emsp;&emsp;Line "+blackhawks[i].line+"</p>";
 	}
 	for(var i=0; i<avalanche.length; i++){
-		document.getElementById("avalanche").innerHTML += "<p>"+avalanche[i].name+"</p>";
+		document.getElementById("avalanche").innerHTML += "<p>"+avalanche[i].name+"&emsp;&emsp;&emsp;Line "+avalanche[i].line+"</p>";
 	}
 	for(var i=0; i<bluejackets.length; i++){
-		document.getElementById("bluejackets").innerHTML += "<p>"+bluejackets[i].name+"</p>";
+		document.getElementById("bluejackets").innerHTML += "<p>"+bluejackets[i].name+"&emsp;&emsp;&emsp;Line "+blackhawks[i].line+"</p>";
 	}
 	for(var i=0; i<stars.length; i++){
-		document.getElementById("stars").innerHTML += "<p>"+stars[i].name+"</p>";
+		document.getElementById("stars").innerHTML += "<p>"+stars[i].name+"&emsp;&emsp;&emsp;Line "+stars[i].line+"</p>";
 	}
 	for(var i=0; i<redwings.length; i++){
-		document.getElementById("redwings").innerHTML += "<p>"+redwings[i].name+"</p>";
+		document.getElementById("redwings").innerHTML += "<p>"+redwings[i].name+"&emsp;&emsp;&emsp;Line "+redwings[i].line+"</p>";
 	}
 	for(var i=0; i<oilers.length; i++){
-		document.getElementById("oilers").innerHTML += "<p>"+oilers[i].name+"</p>";
+		document.getElementById("oilers").innerHTML += "<p>"+oilers[i].name+"&emsp;&emsp;&emsp;Line "+oilers[i].line+"</p>";
 	}
 	for(var i=0; i<panthers.length; i++){
-		document.getElementById("panthers").innerHTML += "<p>"+panthers[i].name+"</p>";
+		document.getElementById("panthers").innerHTML += "<p>"+panthers[i].name+"&emsp;&emsp;&emsp;Line "+panthers[i].line+"</p>";
 	}
 	for(var i=0; i<kings.length; i++){
-		document.getElementById("kings").innerHTML += "<p>"+kings[i].name+"</p>";
+		document.getElementById("kings").innerHTML += "<p>"+kings[i].name+"&emsp;&emsp;&emsp;Line "+kings[i].line+"</p>";
 	}
 	for(var i=0; i<wild.length; i++){
-		document.getElementById("wild").innerHTML += "<p>"+wild[i].name+"</p>";
+		document.getElementById("wild").innerHTML += "<p>"+wild[i].name+"&emsp;&emsp;&emsp;Line "+wild[i].line+"</p>";
 	}
 	for(var i=0; i<canadiens.length; i++){
-		document.getElementById("canadiens").innerHTML += "<p>"+canadiens[i].name+"</p>";
+		document.getElementById("canadiens").innerHTML += "<p>"+canadiens[i].name+"&emsp;&emsp;&emsp;Line "+canadiens[i].line+"</p>";
 	}
 	for(var i=0; i<predators.length; i++){
-		document.getElementById("predators").innerHTML += "<p>"+predators[i].name+"</p>";
+		document.getElementById("predators").innerHTML += "<p>"+predators[i].name+"&emsp;&emsp;&emsp;Line "+predators[i].line+"</p>";
 	}
 	for(var i=0; i<devils.length; i++){
-		document.getElementById("devils").innerHTML += "<p>"+devils[i].name+"</p>";
+		document.getElementById("devils").innerHTML += "<p>"+devils[i].name+"&emsp;&emsp;&emsp;Line "+devils[i].line+"</p>";
 	}
 	for(var i=0; i<islanders.length; i++){
-		document.getElementById("islanders").innerHTML += "<p>"+islanders[i].name+"</p>";
+		document.getElementById("islanders").innerHTML += "<p>"+islanders[i].name+"&emsp;&emsp;&emsp;Line "+islanders[i].line+"</p>";
 	}
 	for(var i=0; i<rangers.length; i++){
-		document.getElementById("rangers").innerHTML += "<p>"+rangers[i].name+"</p>";
+		document.getElementById("rangers").innerHTML += "<p>"+rangers[i].name+"&emsp;&emsp;&emsp;Line "+rangers[i].line+"</p>";
 	}
 	for(var i=0; i<senators.length; i++){
-		document.getElementById("senators").innerHTML += "<p>"+senators[i].name+"</p>";
+		document.getElementById("senators").innerHTML += "<p>"+senators[i].name+"&emsp;&emsp;&emsp;Line "+senators[i].line+"</p>";
 	}
 	for(var i=0; i<flyers.length; i++){
-		document.getElementById("flyers").innerHTML += "<p>"+flyers[i].name+"</p>";
+		document.getElementById("flyers").innerHTML += "<p>"+flyers[i].name+"&emsp;&emsp;&emsp;Line "+flyers[i].line+"</p>";
 	}
 	for(var i=0; i<penguins.length; i++){
-		document.getElementById("penguins").innerHTML += "<p>"+penguins[i].name+"</p>";
+		document.getElementById("penguins").innerHTML += "<p>"+penguins[i].name+"&emsp;&emsp;&emsp;Line "+penguins[i].line+"</p>";
 	}
 	for(var i=0; i<sharks.length; i++){
-		document.getElementById("sharks").innerHTML += "<p>"+sharks[i].name+"</p>";
+		document.getElementById("sharks").innerHTML += "<p>"+sharks[i].name+"&emsp;&emsp;&emsp;Line "+sharks[i].line+"</p>";
 	}
 	for(var i=0; i<kraken.length; i++){
-		document.getElementById("kraken").innerHTML += "<p>"+kraken[i].name+"</p>";
+		document.getElementById("kraken").innerHTML += "<p>"+kraken[i].name+"&emsp;&emsp;&emsp;Line "+kraken[i].line+"</p>";
 	}
 	for(var i=0; i<blues.length; i++){
-		document.getElementById("blues").innerHTML += "<p>"+blues[i].name+"</p>";
+		document.getElementById("blues").innerHTML += "<p>"+blues[i].name+"&emsp;&emsp;&emsp;Line "+blues[i].line+"</p>";
 	}
 	for(var i=0; i<lightning.length; i++){
-		document.getElementById("lightning").innerHTML += "<p>"+lightning[i].name+"</p>";
+		document.getElementById("lightning").innerHTML += "<p>"+lightning[i].name+"&emsp;&emsp;&emsp;Line "+lightning[i].line+"</p>";
 	}
 	for(var i=0; i<mapleleafs.length; i++){
-		document.getElementById("mapleleafs").innerHTML += "<p>"+mapleleafs[i].name+"</p>";
+		document.getElementById("mapleleafs").innerHTML += "<p>"+mapleleafs[i].name+"&emsp;&emsp;&emsp;Line "+mapleleafs[i].line+"</p>";
 	}
 	for(var i=0; i<canucks.length; i++){
-		document.getElementById("canucks").innerHTML += "<p>"+canucks[i].name+"</p>";
+		document.getElementById("canucks").innerHTML += "<p>"+canucks[i].name+"&emsp;&emsp;&emsp;Line "+canucks[i].line+"</p>";
 	}
 	for(var i=0; i<goldenknights.length; i++){
-		document.getElementById("goldenknights").innerHTML += "<p>"+goldenknights[i].name+"</p>";
+		document.getElementById("goldenknights").innerHTML += "<p>"+goldenknights[i].name+"&emsp;&emsp;&emsp;Line "+goldenknights[i].line+"</p>";
 	}
 	for(var i=0; i<capitals.length; i++){
-		document.getElementById("capitals").innerHTML += "<p>"+capitals[i].name+"</p>";
+		document.getElementById("capitals").innerHTML += "<p>"+capitals[i].name+"&emsp;&emsp;&emsp;Line "+capitals[i].line+"</p>";
 	}
 	for(var i=0; i<jets.length; i++){
-		document.getElementById("jets").innerHTML += "<p>"+jets[i].name+"</p>";
+		document.getElementById("jets").innerHTML += "<p>"+jets[i].name+"&emsp;&emsp;&emsp;Line "+jets[i].line+"</p>";
 	}
 }
 
