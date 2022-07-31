@@ -894,7 +894,7 @@ function init (){
 	FLAgoalies = [{name: "Sergei Bobrovsky", state: "inactive"}, {name: "Spencer Knight", state: "inactive"}];
 	LAgoalies = [{name: "Jonathan Quick", state: "inactive"}, {name: "Cal Petersen", state: "inactive"}];
 	MINgoalies = [{name: "Marc-Andr&eacute; Fleury", state: "inactive"}, {name: "Cam Talbot", state: "inactive"}];
-	MTLgoalies = [{name: "Samuel Montembeault", state: "inactive"}, {name: "Jake Allen", state: "inactive"}];
+	MTLgoalies = [{name: "Carey Price", state: "inactive"}, {name: "Jake Allen", state: "inactive"}];
 	NSHgoalies = [{name: "Juuse Saros", state: "inactive"}, {name: "David Rittich", state: "inactive"}];
 	NJgoalies = [{name: "Nico Daws", state: "inactive"}, {name: "Jon Gillies", state: "inactive"}];
 	NYIgoalies = [{name: "Semyon Varlamov", state: "inactive"}, {name: "Ilya Sorokin", state: "inactive"}];
@@ -906,7 +906,7 @@ function init (){
 	SEAgoalies = [{name: "Philipp Grubauer", state: "inactive"}, {name: "Chris Driedger", state: "inactive"}];
 	STLgoalies = [{name: "Jordan Binnington", state: "inactive"}, {name: "Ville Husso", state: "inactive"}];
 	TBgoalies = [{name: "Andrei Vasilevskiy", state: "inactive"}, {name: "Brian Elliott", state: "inactive"}];
-	TORgoalies = [{name: "Petr Mrazek", state: "inactive"}, {name: "Erik Kallgren", state: "inactive"}];
+	TORgoalies = [{name: "Jack Campbell", state: "inactive"}, {name: "Erik Kallgren", state: "inactive"}];
 	VANgoalies = [{name: "Thatcher Demko", state: "inactive"}, {name: "Jaroslav Halak", state: "inactive"}];
 	VGKgoalies = [{name: "Logan Thompson", state: "inactive"}, {name: "Laurent Brossoit", state: "inactive"}];
 	WSHgoalies = [{name: "Ilya Samsonov", state: "inactive"}, {name: "Vitek Vanecek", state: "inactive"}];
@@ -1960,7 +1960,7 @@ function resetAll(e){
 	FLAgoalies = [{name: "Sergei Bobrovsky", state: "inactive"}, {name: "Spencer Knight", state: "inactive"}];
 	LAgoalies = [{name: "Jonathan Quick", state: "inactive"}, {name: "Cal Petersen", state: "inactive"}];
 	MINgoalies = [{name: "Marc-Andr&eacute; Fleury", state: "inactive"}, {name: "Cam Talbot", state: "inactive"}];
-	MTLgoalies = [{name: "Samuel Montembeault", state: "inactive"}, {name: "Jake Allen", state: "inactive"}];
+	MTLgoalies = [{name: "Carey Price", state: "inactive"}, {name: "Jake Allen", state: "inactive"}];
 	NSHgoalies = [{name: "Juuse Saros", state: "inactive"}, {name: "David Rittich", state: "inactive"}];
 	NJgoalies = [{name: "Nico Daws", state: "inactive"}, {name: "Jon Gillies", state: "inactive"}];
 	NYIgoalies = [{name: "Semyon Varlamov", state: "inactive"}, {name: "Ilya Sorokin", state: "inactive"}];
@@ -1972,7 +1972,7 @@ function resetAll(e){
 	SEAgoalies = [{name: "Philipp Grubauer", state: "inactive"}, {name: "Chris Driedger", state: "inactive"}];
 	STLgoalies = [{name: "Jordan Binnington", state: "inactive"}, {name: "Ville Husso", state: "inactive"}];
 	TBgoalies = [{name: "Andrei Vasilevskiy", state: "inactive"}, {name: "Brian Elliott", state: "inactive"}];
-	TORgoalies = [{name: "Petr Mrazek", state: "inactive"}, {name: "Erik Kallgren", state: "inactive"}];
+	TORgoalies = [{name: "Jack Campbell", state: "inactive"}, {name: "Erik Kallgren", state: "inactive"}];
 	VANgoalies = [{name: "Thatcher Demko", state: "inactive"}, {name: "Jaroslav Halak", state: "inactive"}];
 	VGKgoalies = [{name: "Logan Thompson", state: "inactive"}, {name: "Laurent Brossoit", state: "inactive"}];
 	WSHgoalies = [{name: "Ilya Samsonov", state: "inactive"}, {name: "Vitek Vanecek", state: "inactive"}];
@@ -2759,7 +2759,7 @@ function firstPeriod(team1, team2)
 		{
 			var away = 0;
 			var home = 0;
-			var assistedBy = Math.floor(Math.random() * 3);
+			var assistedBy = Math.floor(Math.random() * 6);
 			var randomNumber = Math.floor(Math.random() * 3);
 
 			if(randomNumber == 1) //Away Goal
@@ -2898,7 +2898,7 @@ function firstPeriod(team1, team2)
 				var index = team1[2].indexOf(playerName);
 				team1[2].splice(index, 1);
 
-				if(assistedBy == 1)
+				if(assistedBy == 4)
 				{
 					var randomPlayerIndex1 = team1[2][Math.floor(Math.random() * team1[2].length)];	
 					while (!(randomPlayerIndex1.line.valueOf() == playerName.line || randomPlayerIndex1.line.valueOf() == "D")){
@@ -2926,7 +2926,7 @@ function firstPeriod(team1, team2)
 						team1[2].splice((team1[2].length - 1), 0, playerName);
 					}
 				}
-				else if(assistedBy == 2)
+				else if(assistedBy == 0 || assistedBy == 1 || assistedBy == 2 || assistedBy == 3)
 				{
 					var randomPlayerIndex1 = team1[2][Math.floor(Math.random() * team1[2].length)];
 					
@@ -3133,7 +3133,7 @@ function firstPeriod(team1, team2)
 				var index = team2[2].indexOf(playerName);
 				team2[2].splice(index, 1);
 
-								if(assistedBy == 1)
+								if(assistedBy == 4)
 								{
 									var randomPlayerIndex1 = team2[2][Math.floor(Math.random() * team2[2].length)];
 									
@@ -3161,7 +3161,7 @@ function firstPeriod(team1, team2)
 										team2[2].splice((team2[2].length - 1), 0, playerName);
 									}
 								}
-								else if(assistedBy == 2)
+								else if(assistedBy == 0 || assistedBy == 1 || assistedBy == 2 || assistedBy == 3)
 								{
 									var randomPlayerIndex1 = team2[2][Math.floor(Math.random() * team2[2].length)];
 									
@@ -3247,7 +3247,7 @@ function secondPeriod(team1, team2)
 		{
 			var away = 0;
 			var home = 0;
-			var assistedBy = Math.floor(Math.random() * 3);
+			var assistedBy = Math.floor(Math.random() * 6);
 			var randomNumber = Math.floor(Math.random() * 3);
 
 			if(randomNumber == 1) //Away Goal
@@ -3386,7 +3386,7 @@ function secondPeriod(team1, team2)
 				var index = team1[2].indexOf(playerName);
 				team1[2].splice(index, 1);
 
-				if(assistedBy == 1)
+				if(assistedBy == 4)
 				{
 					var randomPlayerIndex1 = team1[2][Math.floor(Math.random() * team1[2].length)];	
 					
@@ -3415,7 +3415,7 @@ function secondPeriod(team1, team2)
 						team1[2].splice((team1[2].length - 1), 0, playerName);
 					}
 				}
-				else if(assistedBy == 2)
+				else if(assistedBy == 0 || assistedBy == 1 || assistedBy == 2 || assistedBy == 3)
 				{
 					var randomPlayerIndex1 = team1[2][Math.floor(Math.random() * team1[2].length)];
 					
@@ -3622,7 +3622,7 @@ function secondPeriod(team1, team2)
 				var index = team2[2].indexOf(playerName);
 				team2[2].splice(index, 1);
 
-								if(assistedBy == 1)
+								if(assistedBy == 4)
 								{
 									var randomPlayerIndex1 = team2[2][Math.floor(Math.random() * team2[2].length)];
 									
@@ -3650,7 +3650,7 @@ function secondPeriod(team1, team2)
 										team2[2].splice((team2[2].length - 1), 0, playerName);
 									}
 								}
-								else if(assistedBy == 2)
+								else if(assistedBy == 0 || assistedBy == 1 || assistedBy == 2 || assistedBy == 3)
 								{
 									var randomPlayerIndex1 = team2[2][Math.floor(Math.random() * team2[2].length)];
 									
@@ -3736,7 +3736,7 @@ function thirdPeriod(team1, team2)
 		{
 			var away = 0;
 			var home = 0;
-			var assistedBy = Math.floor(Math.random() * 3);
+			var assistedBy = Math.floor(Math.random() * 6);
 			var randomNumber = Math.floor(Math.random() * 3);
 
 			if(randomNumber == 1) //Away Goal
@@ -3875,7 +3875,7 @@ function thirdPeriod(team1, team2)
 				var index = team1[2].indexOf(playerName);
 				team1[2].splice(index, 1);
 
-				if(assistedBy == 1)
+				if(assistedBy == 4)
 				{
 					var randomPlayerIndex1 = team1[2][Math.floor(Math.random() * team1[2].length)];	
 					
@@ -3904,7 +3904,7 @@ function thirdPeriod(team1, team2)
 						team1[2].splice((team1[2].length - 1), 0, playerName);
 					}
 				}
-				else if(assistedBy == 2)
+				else if(assistedBy == 0 || assistedBy == 1 || assistedBy == 2 || assistedBy == 3)
 				{
 					var randomPlayerIndex1 = team1[2][Math.floor(Math.random() * team1[2].length)];
 					
@@ -4111,7 +4111,7 @@ function thirdPeriod(team1, team2)
 				var index = team2[2].indexOf(playerName);
 				team2[2].splice(index, 1);
 
-								if(assistedBy == 1)
+								if(assistedBy == 4)
 								{
 									var randomPlayerIndex1 = team2[2][Math.floor(Math.random() * team2[2].length)];
 									
@@ -4139,7 +4139,7 @@ function thirdPeriod(team1, team2)
 										team2[2].splice((team2[2].length - 1), 0, playerName);
 									}
 								}
-								else if(assistedBy == 2)
+								else if(assistedBy == 0 || assistedBy == 1 || assistedBy == 2 || assistedBy == 3)
 								{
 									var randomPlayerIndex1 = team2[2][Math.floor(Math.random() * team2[2].length)];
 									
@@ -4309,7 +4309,7 @@ function overtime(team1, team2)
 {
 	document.getElementById("simulation").innerHTML += "<p><br/><b>OVERTIME</b></p>";
 	var decisionMaker = Math.floor(Math.random() * 3);
-	var assistedBy = Math.floor(Math.random() * 3);
+	var assistedBy = Math.floor(Math.random() * 6);
 	
 	/*SHOOTOUT*/
 	if (decisionMaker == 0){
@@ -4451,7 +4451,7 @@ function overtime(team1, team2)
 				var index = team1[2].indexOf(playerName);
 				team1[2].splice(index, 1);
 
-				if(assistedBy == 1)
+				if(assistedBy == 4)
 				{
 					var randomPlayerIndex1 = team1[2][Math.floor(Math.random() * team1[2].length)];	
 					
@@ -4478,7 +4478,7 @@ function overtime(team1, team2)
 						team1[2].splice((team1[2].length - 1), 0, playerName);
 					}
 				}
-				else if(assistedBy == 2)
+				else if(assistedBy == 0 || assistedBy == 1 || assistedBy == 2 || assistedBy == 3)
 				{
 					var randomPlayerIndex1 = team1[2][Math.floor(Math.random() * team1[2].length)];	
 					
@@ -4762,7 +4762,7 @@ function overtime(team1, team2)
 				var index = team2[2].indexOf(playerName);
 				team2[2].splice(index, 1);
 
-				if(assistedBy == 1)
+				if(assistedBy == 4)
 				{
 					var randomPlayerIndex1 = team2[2][Math.floor(Math.random() * team2[2].length)];
 					
@@ -4790,7 +4790,7 @@ function overtime(team1, team2)
 						team2[2].splice((team2[2].length - 1), 0, playerName);
 					}
 				}
-				else if(assistedBy == 2)
+				else if(assistedBy == 0 || assistedBy == 1 || assistedBy == 2 || assistedBy == 3)
 				{
 					var randomPlayerIndex1 = team2[2][Math.floor(Math.random() * team2[2].length)];
 					
